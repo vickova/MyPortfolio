@@ -68,8 +68,7 @@ const MyWorks = () => {
                 works.map((items, i)=>{
                     return(
                         <div key={i} className='works'>
-                            <div className='image-cover'>
-                                <img src={items.image} alt={items.name} />
+                            <div className='image-cover' style={{background:`linear-gradient(transparent, rgba(237,156,169, 0.7)), url(${items.image})`, backgroundRepeat:'no-repeat'}}>
                             </div>
                             <div className='text'>
                                 <h3 className='first'>Personal Projects</h3>
@@ -125,10 +124,9 @@ const WorkStyled = styled.div`
         align-items:center;
         gap:1rem;
         margin: 6rem 0;
-        position:relative;
         z-index:-99;
         .image-cover{
-        background-color:#317773;
+        background:linear-gradient(180deg,transparent, rgba(8, 8, 8, 1)), ${({ BannerImage }) => `url(${BannerImage})`};
         padding:1rem;
         width: 50%;
         height: 400px;
@@ -139,7 +137,6 @@ const WorkStyled = styled.div`
         }
     }
         .text{
-        position:absolute;
         width: 45%;
         right:80px;
         top:0;
@@ -147,7 +144,7 @@ const WorkStyled = styled.div`
         font-weight: 600;
         text-align:right;
         p{
-            background-color:rgba(49,119,115, 0.7);
+            background-color:rgba(237,156,169, 0.7);
             color: #fbfbfe;
             padding:2rem 1rem;
             border-radius:10px;
@@ -165,7 +162,6 @@ const WorkStyled = styled.div`
                 }
             }
             .text{
-            position:absolute;
             width: 45%;
             left:80px;
             top:0;
@@ -179,5 +175,25 @@ const WorkStyled = styled.div`
                 text-decoration:none;
             }
         }
+    @media screen and (max-width:680px){
+      margin:0;
+      .works{
+        display:block;
+        .image-cover{
+            margin:0;
+        }
+      }
+      .works:nth-child(even){
+        flex-direction:row-reverse;
+        .image-cover{
+            margin:0;
+            padding:0;
+            img{
+                height:100%;
+                background: rgba(234,163,127, 0.7);
+            }
+        }
+        }
+    }
 `
 export default MyWorks

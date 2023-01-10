@@ -17,11 +17,12 @@ const style = {
   sectionContainer:`flex flex-col bg-gray-100 mt-10 shadow-xl border relative`
 }
 function App() {
-  const [mode, setMode] = useState(true)
+  const [mode, setMode] = useState(true);
+  const [menu, setMenu] = useState(false);
   return (
     <AppStyle>
       <GlobalStyle/>
-      <Navbar mode={mode} setMode={setMode}/>
+      <Navbar mode={mode} setMode={setMode} menu={menu} setMenu={setMenu}/>
         <section>
           <Hero/>
           <Skills/>
@@ -47,5 +48,8 @@ const AppStyle = styled.div`
   section{
     margin-top:8rem;
   }
+  @media screen and (max-width:680px){
+      padding:1rem;
+    }
 `
 export default App;

@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 
 const Qualifications = () => {
-  const [openfront, setOpenfront] = useState(false);
+  const [openfront, setOpenfront] = useState(true);
   const [opendata, setOpendata] = useState(false);
 
   const OpenFrontHandler =()=>{
@@ -60,9 +60,9 @@ margin: 0 10rem;
   }
   .border{
     border:none;
-    border-left: 3px solid #317773;
+    border-left: 3px solid #ed9ca9;
     height:fit-content;
-    color:#317773;
+    color:#ed9ca9;
     padding:0 0.5rem;
   }
   .set{
@@ -99,5 +99,8 @@ margin: 0 10rem;
     gap:1rem;
     margin:1rem 0;
   }
+  @media screen and (max-width:680px){
+      margin:4rem 0;
+    }
 `
 export default Qualifications

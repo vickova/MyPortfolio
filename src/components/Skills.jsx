@@ -92,7 +92,7 @@ const SkillStyle = styled.div`
     }
     li{
       font-size: 1.2rem;
-      border-bottom: 5px solid #317773;
+      border-bottom: 5px solid #ed9ca9;
       padding: 1rem 0;
       display:flex;
       justify-content:space-between;
@@ -118,5 +118,8 @@ const SkillStyle = styled.div`
       transform: ${({ opendata }) => opendata ? 'rotate(180deg)' : 'rotate(0)'};
     }
   }
+  @media screen and (max-width:680px){
+      margin:4rem 0;
+    }
 `
 export default Skills

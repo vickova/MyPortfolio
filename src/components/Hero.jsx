@@ -55,13 +55,13 @@ margin: 0 8rem;
     }
   }
   button{
-    background-color: #317773;
+    background-color: #ed9ca9;
     padding:1rem;
     font-size:1.5rem;
     font-weight:500;
     color:rgb(255, 255, 255);
     margin:2rem 0;
-    border-radius:10px;
+    border-radius:30px 0 30px 0;
   }
   h2{
     font-size:4rem;
@@ -75,12 +75,38 @@ margin: 0 8rem;
     margin:1rem 0;
   }
   .profile{
-    width:35%;
+    width:300px;
+    height:300px;
+    background-color: #ed9ca9;
+    border-radius:50%;
+    position
     img{
-    /* background-color:#317773; */
-    /* border: 10px solid #317773; */
-    /* border-style:dotted; */
+    border-radius:50%;
+    position:absolute;
     }
   }
+  @media screen and (max-width:680px){
+      display:block;
+      margin:0;
+      .profile{
+        margin-left:50px;
+      }
+      .heros{
+        margin:0;
+        display:flex;
+        flex-direction:column-reverse;
+        padding:0;
+      }
+      .herotext{
+        width:100%;
+        h3{
+          background-color:#ed9ca9;
+        }
+      }
+      .images{
+        position:absolute;
+        left:25px;
+      }
+    }
 `
 export default Hero;
