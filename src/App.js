@@ -39,12 +39,7 @@ function App() {
 const AppStyle = styled.div`
   padding:0 5rem;
   color:rgb(51, 51, 15);
-  h3{
-    font-size:2rem;
-  }
-  p{
-    font-size:1.5rem;
-  }
+
   section{
     margin-top:8rem;
   }
