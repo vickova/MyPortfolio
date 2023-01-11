@@ -129,6 +129,7 @@ margin: 0 10rem;
       .first{
         border-right:8px solid #ed9ca9;
         border-style:dashed;
+        width:50%;
       }
     }
 `
