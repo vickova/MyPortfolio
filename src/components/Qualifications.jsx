@@ -99,7 +99,7 @@ margin: 0 10rem;
   }
   .first{
     border-right:10px solid #ed9ca9;
-    border-style:dotted;
+    border-style:dashed;
     padding-right:1rem;
   }
   .qualify{

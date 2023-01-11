@@ -1,5 +1,5 @@
 import React from 'react';
-import Vicky from '../images/myvick.png';
+import Vicky from '../images/vicky-rm-bg.png';
 import LinkedIn from '../images/linkedin.svg';
 import Twitter from '../images/twitter.svg';
 import Github from '../images/github.svg';
@@ -82,8 +82,10 @@ margin: 0 8rem;
     position:relative;
     img{
     position:absolute;
-    bottom:0;
+    bottom:-20px;
     border-radius:50%;
+    border:2px solid #ed9ca9;
+    border-style:dashed;
     }
   }
   @media screen and (max-width:680px){
