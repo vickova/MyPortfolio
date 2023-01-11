@@ -1,5 +1,5 @@
 import React from 'react';
-import Vicky from '../images/myvick.png';
+import Vicky from '../images/vicky-rm-bg.png';
 import LinkedIn from '../images/linkedin.svg';
 import Twitter from '../images/twitter.svg';
 import Github from '../images/github.svg';
@@ -79,10 +79,11 @@ margin: 0 8rem;
     height:300px;
     background-color: #ed9ca9;
     border-radius:50%;
-    position
+    position:relative;
     img{
-    border-radius:50%;
     position:absolute;
+    bottom:0;
+    border-radius:50%;
     }
   }
   @media screen and (max-width:680px){
@@ -97,8 +98,8 @@ margin: 0 8rem;
       }
       .profile{
         margin-left:50px;
-        width:280px;
-        height:280px;
+        width:250px;
+        height:250px;
       }
       .heros{
         margin:0;

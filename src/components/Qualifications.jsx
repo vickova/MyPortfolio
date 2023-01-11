@@ -120,6 +120,11 @@ margin: 0 10rem;
       .qualify{
         flex-direction:column;
       }
+      .last{
+        p{
+          font-size:1rem;
+        }
+      }
     }
 `
 export default Qualifications

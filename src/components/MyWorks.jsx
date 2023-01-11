@@ -123,7 +123,7 @@ const WorkStyled = styled.div`
         align-items:center;
         justify-content:center;
         gap:1rem;
-        margin: 6rem 0;
+        margin: 4rem 0;
         z-index:-99;
         .image-cover{
         padding:1rem;
@@ -187,11 +187,16 @@ const WorkStyled = styled.div`
       p{
         font-size:1rem;
       }
+      h2{
+        margin:2rem;
+      }
       .works{
         display:block;
         background-color:rgba(237,156,169, 0.7);
+        margin:2rem 0;
         .image-cover{
             margin:0;
+            background-size:contain;
         }
         .text{
             p{

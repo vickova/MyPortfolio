@@ -107,6 +107,9 @@ const SkillStyle = styled.div`
     align-items:center;
     gap:2rem;
     transition:all 7s ease-in-out;
+    p{
+      color: gray;
+    }
     .chev{
       width:30px;
       height:30px;
@@ -131,6 +134,9 @@ const SkillStyle = styled.div`
         .chev{
           width:20px;
           height:20px;
+        }
+        p{
+          font-size:1rem;
         }
       }
       p, li{
