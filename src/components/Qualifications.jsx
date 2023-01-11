@@ -69,15 +69,15 @@ margin: 0 10rem;
     display:none;
   }
   h4{
-    font-weight:600;
-    font-size:1.2rem;
+    font-weight:500;
+    font-size:1rem;
     text-align:center;
   }
   h2{
     text-align:center;
   }
   h3{
-    font-weight:400;
+    font-weight:600;
   }
   p{
     font-size:1.2rem;
@@ -90,6 +90,7 @@ margin: 0 10rem;
     display:flex;
     justify-content:center;
     gap:2rem;
+    margin:2rem 0;
   }
  
   .last{
@@ -112,7 +113,7 @@ margin: 0 10rem;
   @media screen and (max-width:680px){
       margin:4rem 0;
       h3{
-        font-size:1.5rem;
+        font-size:1.2rem;
       }
       p, li{
         font-size:1rem;

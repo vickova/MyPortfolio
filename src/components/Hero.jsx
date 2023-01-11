@@ -1,5 +1,5 @@
 import React from 'react';
-import Vicky from '../images/vicky-rm-bg.png';
+import Vicky from '../images/myvick.png';
 import LinkedIn from '../images/linkedin.svg';
 import Twitter from '../images/twitter.svg';
 import Github from '../images/github.svg';
