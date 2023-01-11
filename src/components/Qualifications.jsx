@@ -111,7 +111,7 @@ margin: 0 10rem;
     }
   }
   @media screen and (max-width:680px){
-      margin:4rem 0;
+      margin:4rem 1rem;
       h3{
         font-size:1.2rem;
       }
@@ -125,6 +125,9 @@ margin: 0 10rem;
         p{
           font-size:1rem;
         }
+      }
+      .first{
+        border-right:8px solid #ed9ca9;
       }
     }
 `
