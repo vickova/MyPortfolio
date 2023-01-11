@@ -5,8 +5,10 @@ import Weather from '../images/weather.png';
 import PlayDogo from '../images/playdogo.png';
 import News from '../images/news.png';
 import Analysis from '../images/analysis.png';
+import Github from '../images/github.svg';
 import styled from 'styled-components';
 import OtherProjects from './OtherProjects';
+import { FaGithub ,FaRegShareSquare,FaGitAlt, FaGithubSquare } from 'react-icons/fa';
 
 
 const MyWorks = () => {
@@ -16,7 +18,7 @@ const MyWorks = () => {
             name:'VShop E-commerce',
             description: 'A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more. Available on Visual Studio Marketplace, Package Control, Atom Package Manager, and npm.',
             resouces: ['Reactjs', 'Redux', 'Styled Components', 'Tailwind css', 'Vercel', ],
-            github:'/',
+            github:'https://github.com/vickova/vshop_ecommerce',
             livesite:'https://vshop-ecommerce.vercel.app/'
         },
         {
@@ -24,7 +26,7 @@ const MyWorks = () => {
             name:'Covid19 Analysis for Jaala',
             description: 'An analysis of the rate of covid 19 in different countries.  ',
             resouces: ['Python:', ' Numpy,', ' Pandas,', ' Matplotlib' ],
-            github:'/',
+            github:'https://github.com/vickova',
             livesite:'https://perfect-movies.netlify.app/'
         },
         {
@@ -32,7 +34,7 @@ const MyWorks = () => {
             name:'MovieHub',
             description: 'A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more. Available on Visual Studio Marketplace, Package Control, Atom Package Manager, and npm.',
             resouces: ['Reactjs', 'Redux', 'Styled Components', 'Tailwind css', 'Vercel', ],
-            github:'/',
+            github:'https://github.com/vickova/Movie-perfected',
             livesite:'https://perfect-movies.netlify.app/'
         },
         {
@@ -40,7 +42,7 @@ const MyWorks = () => {
             name:'Weather App',
             description: 'A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more. Available on Visual Studio Marketplace, Package Control, Atom Package Manager, and npm.',
             resouces: ['Reactjs', 'Redux', 'Styled Components', 'Tailwind css', 'Vercel', ],
-            github:'/',
+            github:'https://github.com/vickova/Weather_Site',
             livesite:'https://weather-site-pied.vercel.app/'
         },
         {
@@ -48,7 +50,7 @@ const MyWorks = () => {
             name:'PlayDogo',
             description: 'A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more. Available on Visual Studio Marketplace, Package Control, Atom Package Manager, and npm.',
             resouces: ['Reactjs', 'Redux', 'Styled Components', 'Tailwind css', 'Vercel', ],
-            github:'/',
+            github:'https://github.com/vickova',
             livesite:'https://vic-kidsplay.netlify.app/'
         },
         {
@@ -56,7 +58,7 @@ const MyWorks = () => {
             name:'News',
             description: 'A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more. Available on Visual Studio Marketplace, Package Control, Atom Package Manager, and npm.',
             resouces: ['Reactjs', 'Redux', 'Styled Components', 'Tailwind css', 'Vercel', ],
-            github:'/',
+            github:'https://github.com/vickova/News',
             livesite:'https://newsbegins.vercel.app/'
         }
     ]
@@ -74,7 +76,15 @@ const MyWorks = () => {
                                 <h3 className='first'>Personal Projects</h3>
                                 <h3>{items.name}</h3>
                                 <p>{items.description}</p>
-                                <ul>
+                                <div className='link'>
+                                    <a href={items.github} target='_blank'>
+                                        <img src={Github} alt="github" />
+                                    </a>
+                                    <a href={items.livesite} target='_blank'>
+                                        <FaRegShareSquare className='share'/>
+                                    </a>
+                                </div>
+                                <ul className='lists'>
                                 {
                                     items.resouces.map((lst, i)=>{
                                         return(
@@ -118,6 +128,15 @@ const WorkStyled = styled.div`
   p{
     margin:1rem 0;
   }
+    .link{
+        display:flex;
+        justify-content:space-between;
+        margin:1rem;
+        img, .share{
+            width:35px;
+            height:35px;
+        }
+    }
     .works{
         display:flex;
         align-items:center;
@@ -155,15 +174,15 @@ const WorkStyled = styled.div`
     }
 
     }
-    ul{
-            display:flex;
-            flex-wrap:wrap;
-            justify-content:space-between;
-            li{
-                text-decoration:none;
-                color: #4a4444;
-            }
+    .lists{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:space-between;
+        li{
+            text-decoration:none;
+            color: #4a4444;
         }
+    }
         @media screen and (min-width:760px){
             .works{
                 .image-cover{
@@ -204,7 +223,7 @@ const WorkStyled = styled.div`
             }
         }
       }
-      ul{
+      .lists{
         gap:.5rem;
       }
     }

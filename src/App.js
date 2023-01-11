@@ -9,8 +9,7 @@ import MyWorks from './components/MyWorks';
 import OtherProjects from './components/OtherProjects';
 import Testimonial from './components/Testimonial';
 import Contact from './components/Contact';
-import {Routes, Route} from 'react-router-dom'
-
+import Footer from './components/Footer';
 
 const style = {
   appContainer:`max-w-[728px] mx-auto text-center`,
@@ -28,10 +27,10 @@ function App() {
           <Skills/>
           <Qualifications/>
           <MyWorks/>
-          <OtherProjects/>
-          {/* <Testimonial/> */}
+          <Testimonial/>
           <Contact/>
         </section>
+        <Footer/>
     </AppStyle>
   );
 }
