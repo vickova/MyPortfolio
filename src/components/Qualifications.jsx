@@ -63,7 +63,7 @@ margin: 0 10rem;
     border-left: 3px solid #ed9ca9;
     height:fit-content;
     color:#ed9ca9;
-    padding:0 0.5rem;
+    padding:0 .5rem;
   }
   .set{
     display:none;
@@ -71,8 +71,9 @@ margin: 0 10rem;
   h4{
     font-weight:600;
     font-size:1.2rem;
+    text-align:center;
   }
-  h2, h4{
+  h2{
     text-align:center;
   }
   h3{
@@ -84,6 +85,7 @@ margin: 0 10rem;
   li{
     font-size:1.2rem;
   }
+  
   .section{
     display:flex;
     justify-content:center;
@@ -94,13 +96,30 @@ margin: 0 10rem;
     text-align:right;
     width: 40%;
   }
+  .first{
+    border-right:10px solid #ed9ca9;
+    border-style:dotted;
+    padding-right:1rem;
+  }
   .qualify{
     display:flex;
     gap:1rem;
     margin:1rem 0;
+    h4{
+      text-align:left;
+    }
   }
   @media screen and (max-width:680px){
       margin:4rem 0;
+      h3{
+        font-size:1.5rem;
+      }
+      p, li{
+        font-size:1rem;
+      }
+      .qualify{
+        flex-direction:column;
+      }
     }
 `
 export default Qualifications

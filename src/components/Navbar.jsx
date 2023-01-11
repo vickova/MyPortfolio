@@ -61,7 +61,7 @@ const NavStyle = styled.div`
     }
   }
   @media screen and (max-width:680px){
-    padding:2rem;
+    padding:1rem 1.5rem;
       ul{
   display:${({menu})=>menu?'block':'none'};
   position:fixed;

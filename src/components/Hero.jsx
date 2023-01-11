@@ -88,8 +88,17 @@ margin: 0 8rem;
   @media screen and (max-width:680px){
       display:block;
       margin:0;
+      p{
+        font-size:1.2rem;
+      }
+      button{
+        font-size:1.2rem;
+        padding:.8rem 1rem;
+      }
       .profile{
         margin-left:50px;
+        width:280px;
+        height:280px;
       }
       .heros{
         margin:0;
@@ -106,6 +115,13 @@ margin: 0 8rem;
       .images{
         position:absolute;
         left:25px;
+        justify-content:center;
+        gap:2rem;
+        height: 40vh;
+        img{
+          width:25px;
+          height:25px;
+        }
       }
     }
 `

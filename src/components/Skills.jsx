@@ -40,7 +40,7 @@ const Skills = () => {
                   <li>Next js</li>
                 </ul>
             </div>
-            <div>
+            <div className='left'>
                 <div className='skillset' onClick={OpenDataHandler}>
                   <div>
                     <h3>Data Analysis</h3>
@@ -81,6 +81,7 @@ const SkillStyle = styled.div`
   p{
     font-size:1rem;
   }
+
   .skill-flex{
     margin: 2rem 0;
     display:flex;
@@ -119,7 +120,25 @@ const SkillStyle = styled.div`
     }
   }
   @media screen and (max-width:680px){
-      margin:4rem 0;
+    margin:4rem 0;
+      .skill-flex{
+        h3{
+          font-size:1.2rem;
+        }
+      }
+      .skillset{
+        gap:.5rem;
+        .chev{
+          width:20px;
+          height:20px;
+        }
+      }
+      p, li{
+        font-size:1rem;
+      }
+      .qualify{
+        flex-direction:column;
+      }
     }
 `
 export default Skills

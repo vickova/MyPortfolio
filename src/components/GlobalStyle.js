@@ -16,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
         }
     }
     body{
-        font-family:'Montserrat', sans-serif;
+        font-family:'Poppins','Montserrat', sans-serif;
         width:100%;
         background-color:#FBFBFB;
     }

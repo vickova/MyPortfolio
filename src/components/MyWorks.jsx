@@ -68,7 +68,7 @@ const MyWorks = () => {
                 works.map((items, i)=>{
                     return(
                         <div key={i} className='works'>
-                            <div className='image-cover' style={{background:`linear-gradient(transparent, rgba(237,156,169, 0.7)), url(${items.image})`, backgroundRepeat:'no-repeat'}}>
+                            <div className='image-cover' style={{background:`url(${items.image}`, backgroundRepeat:'no-repeat', backgroundSize:'cover'}}>
                             </div>
                             <div className='text'>
                                 <h3 className='first'>Personal Projects</h3>
@@ -116,28 +116,29 @@ const WorkStyled = styled.div`
     font-weight:600;
   }
   p{
-    font-size:1.2rem;
     margin:1rem 0;
   }
     .works{
         display:flex;
         align-items:center;
+        justify-content:center;
         gap:1rem;
         margin: 6rem 0;
         z-index:-99;
         .image-cover{
-        background:linear-gradient(180deg,transparent, rgba(8, 8, 8, 1)), ${({ BannerImage }) => `url(${BannerImage})`};
         padding:1rem;
-        width: 50%;
         height: 400px;
-        margin-left: 100px;
-        img{
+        border: 3px solid rgba(237,156,169, 0.7);
+
+        /* &:hover{
+            width:50%;
+        } */
+        /* img{
             height:100%;
             background: rgba(234,163,127, 0.7);
-        }
+        } */
     }
         .text{
-        width: 45%;
         right:80px;
         top:0;
         padding:1rem;
@@ -149,51 +150,58 @@ const WorkStyled = styled.div`
             padding:2rem 1rem;
             border-radius:10px;
             font-weight:500;
+            font-size:1.2rem;
         }
     }
-    }
-        .works:nth-child(even){
-            flex-direction:row-reverse;
-            .image-cover{
-                margin-right: 100px;
-                img{
-                    height:100%;
-                    background: rgba(234,163,127, 0.7);
-                }
-            }
-            .text{
-            width: 45%;
-            left:80px;
-            top:0;
-            text-align:left;
-        }
+
     }
     ul{
             display:flex;
+            flex-wrap:wrap;
             justify-content:space-between;
             li{
                 text-decoration:none;
+                color: #4a4444;
+            }
+        }
+        @media screen and (min-width:760px){
+            .works{
+                .image-cover{
+                    width:50%;
+                }
+                .text{
+                    width:45%;
+                }
             }
         }
     @media screen and (max-width:680px){
       margin:0;
+      h3{
+        font-size:1rem;
+        font-weight:400;
+    }
+    .first{
+        font-weight:600;
+        font-size:1.5rem;
+    }
+      p{
+        font-size:1rem;
+      }
       .works{
         display:block;
+        background-color:rgba(237,156,169, 0.7);
         .image-cover{
             margin:0;
         }
-      }
-      .works:nth-child(even){
-        flex-direction:row-reverse;
-        .image-cover{
-            margin:0;
-            padding:0;
-            img{
-                height:100%;
-                background: rgba(234,163,127, 0.7);
+        .text{
+            p{
+                font-size:1rem;
             }
         }
-        }
+      }
+      ul{
+        gap:.5rem;
+      }
     }
 `
 export default MyWorks
