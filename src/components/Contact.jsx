@@ -7,7 +7,7 @@ const Contact = () => {
       <h2>Contact</h2>
       <h4>Get in touch</h4>
       <div className='form'>
-        <form action="">
+        <form action="" onSubmit={(e)=>e.preventDefault()}>
           <div className='form-section'>
             <div className='sect'>
               <input type="text" name='name' placeholder='Name'/>
@@ -48,14 +48,17 @@ h2{
   }
 input, textarea{
   background-color: #fff;
+  box-shadow: 1px 1px 1px 1px gray;
+  border-radius:10px;
   display:block;
   width:100%;
   margin: 1rem 0;
   height: 100px;
   padding:1rem;
   outline:none;
+  font-size: 1.5rem;
   &::placeholder{
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight:500;
     color:gray;
   }
@@ -104,6 +107,13 @@ button{
   textarea{
     height: 40vh;
   }
+  input, textarea{
+  font-size: 1rem;
+  &::placeholder{
+    font-size: 1rem;
+
+  }
+}
 }
 
 `

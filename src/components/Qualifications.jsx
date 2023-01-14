@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
+
 const Qualifications = () => {
   const [openfront, setOpenfront] = useState(true);
   const [opendata, setOpendata] = useState(false);
@@ -24,17 +25,15 @@ const Qualifications = () => {
                   <div className='qualify'>
                     <h4 className={openfront? 'border':''} onClick={OpenFrontHandler}>Cogenie</h4>
                     <ul className={openfront? '':'set'}>
-                        <li>Developed and maintained code for in-house and client websites primarily using HTML, CSS, Sass, JavaScript, and jQuery</li>
-                        <li>Manually tested sites in various browsers and mobile devices to ensure cross-browser compatibility and responsiveness</li>
-                        <li>Clients included JetBlue, Lovesac, U.S. Cellular, U.S. Department of Defense, and more</li>
+                        <li><div className='right-chev'/> <span>contributed to the development of Cway World Wide using React and Styled Components</span></li>
+                        <li><div className='right-chev'/> <span>Collaborated with colleagues and senior developers. I also got better in the understanding of git and github</span></li>
                     </ul>
                   </div>
                   <div className='qualify'>
                     <h4 className={opendata? 'border':''} onClick={OpenDataHandler}>Tribnova</h4>
                     <ul className={opendata? '':'set'}>
-                        <li>Developed and maintained code for in-house and client websites primarily using HTML, CSS, Sass, JavaScript, and jQuery</li>
-                        <li>Manually tested sites in various browsers and mobile devices to ensure cross-browser compatibility and responsiveness</li>
-                        <li>Clients included JetBlue, Lovesac, U.S. Cellular, U.S. Department of Defense, and more</li>
+                        <li><div className='right-chev'/> <span>I built different pages of the tribinova website like the dashborad section, the sign in section, etc.</span></li>
+                        <li><div className='right-chev'/> <span>I worked with colleagues and senior developers, contibuting ideas and profering solutions to prolems when they arise</span></li>
                     </ul>
                     </div>
                 </div>
@@ -53,7 +52,7 @@ const Qualifications = () => {
 }
 
 const QualificationStyle = styled.div`
-margin: 0 10rem;
+margin: 4rem 10rem;
     h2{
     font-size:2rem;
     font-weight:600;
@@ -64,6 +63,12 @@ margin: 0 10rem;
     height:fit-content;
     color:#ed9ca9;
     padding:0 .5rem;
+  }
+  .right-chev{
+    background-color:#ed9ca9;
+    width:10px;
+    height:10px;
+    border-radius:50%;
   }
   .set{
     display:none;
@@ -78,6 +83,7 @@ margin: 0 10rem;
   }
   h3{
     font-weight:600;
+    font-size:1.5rem;
   }
   p{
     font-size:1.2rem;
@@ -96,10 +102,12 @@ margin: 0 10rem;
   .last{
     text-align:right;
     width: 40%;
+    p{
+      margin: 1rem 0;
+    }
   }
   .first{
-    border-right:10px solid #ed9ca9;
-    border-style:dashed;
+    border-right:3px solid #ed9ca9;
     padding-right:1rem;
   }
   .qualify{
@@ -108,6 +116,12 @@ margin: 0 10rem;
     margin:1rem 0;
     h4{
       text-align:left;
+    }
+    ul{
+      li{
+        display:flex;
+        gap:.5rem;
+      }
     }
   }
   @media screen and (max-width:680px){
@@ -127,8 +141,7 @@ margin: 0 10rem;
         }
       }
       .first{
-        border-right:8px solid #ed9ca9;
-        border-style:dashed;
+        border-right:2px solid #ed9ca9;
         width:50%;
       }
     }

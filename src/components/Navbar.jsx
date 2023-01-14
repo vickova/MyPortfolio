@@ -3,25 +3,31 @@ import Burger from './Burger';
 import LightMode from '../images/darkmode.svg';
 import DarkMode from '../images/lightmode.svg';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
+import { FiMoon } from 'react-icons/fi';
+
+
 
 const Navbar = ({mode, setMode, menu, setMenu}) => {
+const {pathname} = useLocation();
 
-  console.log(mode)
   return (
     <NavStyle $mode={mode} menu={menu}>
         <h2>Vic<span>Kode</span></h2>
         <Burger menu={menu} setMenu={setMenu}/>
         <ul>
-            <li><a href='#home'><span>1.</span> Home</a></li>
-            <li><a href='#skills'><span>2.</span> Skills</a></li>
-            <li><a href='#qualifications'><span>3.</span> Qualification</a></li>
-            <li><a href='#myworks'><span>4.</span> My Works</a></li>
-            <li><a href='#testimonials'><span>5.</span> Testimonials</a></li>
-            <li><a href='#contact'><span>6.</span> Contact</a></li>
+            <li><a href='#home' style={{color:`${pathname === '/'? '#ed9ca9':''}`}}> Home</a></li>
+            <li><a href='#skills' style={{color:`${pathname === '/skills'? '#ed9ca9':''}`}}> Skills</a></li>
+            <li><a href='#qualifications' style={{color:`${pathname === '/#qualifications'? '#ed9ca9':''}`}}> Qualification</a></li>
+            <li><a href='#myworks' style={{color:`${pathname === '/#myworks'? '#ed9ca9':''}`}}> My Works</a></li>
+            <li><a href='#testimonials' style={{color:`${pathname === '/testimonials'? '#ed9ca9':''}`}}> Testimonials</a></li>
+            <li><a href='#contact' style={{color:`${pathname === '/#contact'? '#ed9ca9':''}`}}> Contact</a></li>
             <div onClick={()=> setMode(!mode)}>
-                <img src={mode? LightMode: DarkMode} alt="lightmode" className='w-[30px] h-[30px]' />
+              {mode?
+                <img src={LightMode} alt="lightmode" className='w-[30px] h-[30px]' />:
+                <FiMoon className='h-[30px] w-[28px] hover:text-[#ed9ca9] hover:cursor-pointer'/>
+              }
             </div>
         </ul>
     </NavStyle>
@@ -58,6 +64,9 @@ const NavStyle = styled.div`
       span{
         font-weight:600;
       }
+    }
+    li:hover{
+      color: #ed9ca9;
     }
   }
   @media screen and (max-width:680px){

@@ -8,7 +8,9 @@ import Analysis from '../images/analysis.png';
 import Github from '../images/github.svg';
 import styled from 'styled-components';
 import OtherProjects from './OtherProjects';
-import { FaGithub ,FaRegShareSquare,FaGitAlt, FaGithubSquare } from 'react-icons/fa';
+import { FaRegShareSquare } from 'react-icons/fa';
+import { FiGithub } from 'react-icons/fi';
+
 
 
 const MyWorks = () => {
@@ -16,50 +18,57 @@ const MyWorks = () => {
         {
             image:Vshop,
             name:'VShop E-commerce',
-            description: 'A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more. Available on Visual Studio Marketplace, Package Control, Atom Package Manager, and npm.',
+            description:'An e-commerce website that was built to learn about redux. Vshop has functionalities like add to cart, delete from cart. It has sections like furniture section, jwelries section,etc. All of the products were hand coded as no Api was consumed',
             resouces: ['Reactjs', 'Redux', 'Styled Components', 'Tailwind css', 'Vercel', ],
             github:'https://github.com/vickova/vshop_ecommerce',
-            livesite:'https://vshop-ecommerce.vercel.app/'
+            livesite:'https://vshop-ecommerce.vercel.app/',
+            type:'Personal'
+
         },
         {
             image:Analysis,
             name:'Covid19 Analysis for Jaala',
-            description: 'An analysis of the rate of covid 19 in different countries.  ',
+            description: 'An analysis of the rate of covid 19 in different countries. With this project I was able to flex my knowledge on Matplotlib, Numpy and other data analysis libraries in Python. ',
             resouces: ['Python:', ' Numpy,', ' Pandas,', ' Matplotlib' ],
             github:'https://github.com/vickova',
-            livesite:'https://perfect-movies.netlify.app/'
+            livesite:'https://perfect-movies.netlify.app/',
+            type:'Client'
         },
         {
             image:Movie,
             name:'MovieHub',
-            description: 'A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more. Available on Visual Studio Marketplace, Package Control, Atom Package Manager, and npm.',
+            description: 'MovieHub is a movie website that was built using the TMDB Api. This project has deatures like the light mode and dark mode features, it also shows the most popular and the most trending movies in the world. You can also get to watch the trailer of these movies on Youtube through this website',
             resouces: ['Reactjs', 'Redux', 'Styled Components', 'Tailwind css', 'Vercel', ],
             github:'https://github.com/vickova/Movie-perfected',
-            livesite:'https://perfect-movies.netlify.app/'
+            livesite:'https://perfect-movies.netlify.app/',
+            type:'Personal'
         },
         {
             image:Weather,
             name:'Weather App',
-            description: 'A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more. Available on Visual Studio Marketplace, Package Control, Atom Package Manager, and npm.',
+            description: 'For this weather app project, I consumed an Api called the weather Api and with this I was able to create a search section, a forecast section and every other section a weather app should have. This website also has the darkmode and lightmode features.',
             resouces: ['Reactjs', 'Redux', 'Styled Components', 'Tailwind css', 'Vercel', ],
             github:'https://github.com/vickova/Weather_Site',
-            livesite:'https://weather-site-pied.vercel.app/'
+            livesite:'https://weather-site-pied.vercel.app/',
+            type:'Personal'
         },
         {
             image:PlayDogo,
             name:'PlayDogo',
-            description: 'A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more. Available on Visual Studio Marketplace, Package Control, Atom Package Manager, and npm.',
+            description: 'Playdogo is a kids learning website that was built to increase my knowledge of react. THis website helped me fles my knowledge on framer motion.',
             resouces: ['Reactjs', 'Redux', 'Styled Components', 'Tailwind css', 'Vercel', ],
             github:'https://github.com/vickova',
-            livesite:'https://vic-kidsplay.netlify.app/'
+            livesite:'https://vic-kidsplay.netlify.app/',
+            type:'Personal'
         },
         {
             image:News,
             name:'News',
-            description: 'A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more. Available on Visual Studio Marketplace, Package Control, Atom Package Manager, and npm.',
+            description: 'The News Website is a website that displays the latest news, you can also search for news based on the keyword you type. AN Api was consumed for this project',
             resouces: ['Reactjs', 'Redux', 'Styled Components', 'Tailwind css', 'Vercel', ],
             github:'https://github.com/vickova/News',
-            livesite:'https://newsbegins.vercel.app/'
+            livesite:'https://newsbegins.vercel.app/',
+            type:'Personal'
         }
     ]
   return (
@@ -73,12 +82,12 @@ const MyWorks = () => {
                             <div className='image-cover' style={{background:`url(${items.image}`, backgroundRepeat:'no-repeat', backgroundSize:'cover'}}>
                             </div>
                             <div className='text'>
-                                <h3 className='first'>Personal Projects</h3>
+                                <h3 className='first'>{items.type} Project</h3>
                                 <h3>{items.name}</h3>
                                 <p>{items.description}</p>
                                 <div className='link'>
                                     <a href={items.github} target='_blank'>
-                                        <img src={Github} alt="github" />
+                                        <FiGithub className='share'/>
                                     </a>
                                     <a href={items.livesite} target='_blank'>
                                         <FaRegShareSquare className='share'/>
@@ -107,12 +116,12 @@ const MyWorks = () => {
 }
 
 const WorkStyled = styled.div`
-    margin: 0 4rem;
+    margin:4rem;
     h2{
     font-size:2rem;
     font-weight:600;
     text-align:center;
-    margin: 3rem 0;
+    margin: 3rem 0 1rem 0;
   }
   h4{
     font-weight:500;
@@ -132,9 +141,9 @@ const WorkStyled = styled.div`
         display:flex;
         justify-content:space-between;
         margin:1rem;
-        img, .share{
-            width:35px;
-            height:35px;
+        .share{
+            width:30px;
+            height:30px;
         }
     }
     .works{

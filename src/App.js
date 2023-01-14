@@ -36,14 +36,16 @@ function App() {
 }
 
 const AppStyle = styled.div`
-  padding:0 5rem;
   color:rgb(51, 51, 15);
 
   section{
+    padding:0 5rem;
     margin-top:8rem;
   }
   @media screen and (max-width:680px){
+    section{
       padding:1rem;
+    }
     }
 `
 export default App;

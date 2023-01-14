@@ -1,25 +1,24 @@
 import React from 'react';
 import Vicky from '../images/vicky-rm-bg.png';
-import LinkedIn from '../images/linkedin.svg';
-import Twitter from '../images/twitter.svg';
-import Github from '../images/github.svg';
+import { FiGithub, FiLinkedin, FiTwitter, FiDownload } from 'react-icons/fi';
 import styled from 'styled-components';
-import {FaTwitter} from 'react-icons/fa'
+import Cv from '../images/cv/Victoria Olumide.pdf'
 
 const Hero = () => {
   return (
     <HeroStyle id='home'>
       <div className='images'>
-                <img src={LinkedIn} alt="" className='w-[35px] h-[35px]'/>
-                <img src={Twitter} alt=""  className='w-[35px] h-[35px]'/>
-                <img src={Github} alt="" className='w-[35px] h-[35px]'/>
+            <FiGithub className='hero-icons'/>
+            <FiLinkedin className='hero-icons'/>
+            <FiTwitter className='hero-icons'/>
+
         </div>
         <div className='heros'>
         <div className='herotext'>
             <h2>Hello, I'm Victoria Olumide</h2>
             <h3>A Daring Frontend Developer and Data Analyst</h3>
             <p>I optimize user experience by implementing visual elements that users see and interact with within a web application</p>
-            <button>Download CV</button>
+            <button><a href={Cv} target='_blank'><span>Download CV</span><FiDownload/></a></button>
         </div>
         <div className='profile'>
           <img src={Vicky} alt="Victoria Olumide"/>
@@ -38,6 +37,11 @@ margin: 0 8rem;
     justify-content:center;
     gap:2rem;
     margin: 0 4rem;
+  }
+  .hero-icons{
+    color:#ed9ca9;
+    width:25px;
+    height:25px;
   }
   .herotext{
     width:50%;
@@ -62,6 +66,11 @@ margin: 0 8rem;
     color:rgb(255, 255, 255);
     margin:2rem 0;
     border-radius:30px 0 30px 0;
+    a{
+    display:flex;
+    align-items:center;
+    gap:1rem;
+    }
   }
   h2{
     font-size:4rem;
@@ -86,6 +95,7 @@ margin: 0 8rem;
     border-radius:50%;
     border:2px solid #ed9ca9;
     border-style:dashed;
+    background-blend-mode:difference;
     }
   }
   @media screen and (max-width:680px){

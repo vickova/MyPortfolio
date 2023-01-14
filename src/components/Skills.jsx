@@ -1,6 +1,8 @@
 import React,{useState} from 'react';
 import styled from 'styled-components';
-import {FaHtml5, FaCss3, FaReact, FaFileExcel, FaExchangeAlt, FaPython, FaChevronUp, FaChevronDown} from 'react-icons/fa';
+import {FaCss3, FaReact, FaPython, FaChevronDown} from 'react-icons/fa';
+import { AiOutlineHtml5 } from 'react-icons/ai';
+import { DiJavascript1 } from 'react-icons/di';
 import {AiFillFileExcel} from 'react-icons/ai';
 
 
@@ -31,10 +33,10 @@ const Skills = () => {
                     <FaChevronDown className='chev first'/>
                 </div>
                 <ul className={openfront?'':'hide'}>
-                  <li>Html <FaHtml5/></li>
-                  <li>Css <FaCss3/></li>
-                  <li>Javascript</li>
-                  <li>React js <FaReact/></li>
+                  <li>Html <AiOutlineHtml5 className='skill-icon'/></li>
+                  <li>Css <FaCss3 className='skill-icon'/></li>
+                  <li>Javascript <DiJavascript1 className='skill-icon'/></li>
+                  <li>React js <FaReact className='skill-icon'/></li>
                   <li>Tailwind css</li>
                   <li>Styled components </li>
                   <li>Next js</li>
@@ -49,8 +51,8 @@ const Skills = () => {
                     <FaChevronDown className='chev last'/>
                 </div>
                 <ul className={opendata?'':'hide'}>
-                  <li>Python <FaPython/></li>
-                  <li>Excel <AiFillFileExcel/></li>
+                  <li>Python <FaPython className='skill-icon'/></li>
+                  <li>Excel <AiFillFileExcel className='skill-icon'/></li>
                   <li>Power Bi</li>
                   <li>Tableau</li>
                 </ul>
@@ -81,7 +83,9 @@ const SkillStyle = styled.div`
   p{
     font-size:1rem;
   }
-
+.skill-icon{
+  color: #ed9ca9;
+}
   .skill-flex{
     margin: 2rem 0;
     display:flex;

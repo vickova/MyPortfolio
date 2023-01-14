@@ -86,7 +86,7 @@ const OtherProjects = () => {
 }
 
 const ProjectsStyle = styled.div`
-margin: 2rem 1rem;
+margin: 4rem 1rem;
 color: rgb(35, 36, 41);
   .projects{
     display:flex;
