@@ -4,7 +4,7 @@ import Emmanuel from '../images/emmanuel.png';
 import Oluwaseun from '../images/oluwaseun.jpg';
 
 
-const Testimonial = () => {
+const Testimonial = ({mode}) => {
   const testimonial = [
     {
       name:'Emmanuel - Eunit ',
@@ -20,7 +20,7 @@ const Testimonial = () => {
     }
   ]
   return (
-    <TestimonialStyle id='testimonials'>
+    <TestimonialStyle id='testimonials' mode={mode}>
       <div className='header'>
         <h2>Testimonials</h2>
         <h4>My clients and Collaborators saying</h4>

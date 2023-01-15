@@ -115,7 +115,7 @@ color: rgb(35, 36, 41);
   .single-project{
     padding:1rem;
     background-color: ${({ mode }) => mode ?'#fff': '#884a55'};
-    box-shadow: ${({ mode }) => mode ?'0 1px 2px 0 gray': '2px 1px 2px 2px #884a55'};
+    box-shadow:1px 1px 2px 1px ${({ mode }) => mode ?'gray': '#38151b'};
     border-radius:10px;
   }
   .icons{

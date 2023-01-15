@@ -63,7 +63,7 @@ const NavStyle = styled.div`
       font-size:1.2rem;
       font-weight:600;
       color: #494848;
-      color: ${({ $mode }) => $mode ? '#FBFBFB': '##494848' };
+      color: ${({ $mode }) => $mode ?'##494848': '#FBFBFB' };
       transition:.3s;
       span{
         font-weight:600;

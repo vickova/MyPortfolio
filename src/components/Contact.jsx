@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Contact = () => {
+const Contact = ({mode}) => {
   return (
-    <ContactStyle id='contact'>
+    <ContactStyle id='contact' mode={mode}>
       <h2>Contact</h2>
       <h4>Get in touch</h4>
       <div className='form'>
