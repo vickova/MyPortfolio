@@ -124,6 +124,9 @@ const WorkStyled = styled.div`
     margin: 3rem 0 1rem 0;
     color: ${({ mode }) => mode ? '##494848': '#FBFBFB'};
   }
+  .image-cover{
+    background-size:cover;
+  }
   h4{
     font-weight:500;
     color: ${({ mode }) => mode ? '##494848': '#FBFBFB'};
@@ -162,7 +165,6 @@ const WorkStyled = styled.div`
         padding:1rem;
         height: 400px;
         border: 3px solid rgba(237,156,169, 0.7);
-
         /* &:hover{
             width:50%;
         } */
@@ -230,6 +232,7 @@ const WorkStyled = styled.div`
         .image-cover{
             margin:0;
             background-size:contain;
+            height: 150px;
         }
         .text{
             p{

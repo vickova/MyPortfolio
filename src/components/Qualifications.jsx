@@ -146,9 +146,16 @@ margin: 4rem 10rem;
           font-size:1rem;
         }
       }
+      .section{
+        display:block;
+      }
       .first{
-        border-right:2px solid #ed9ca9;
-        width:50%;
+        border:none;
+        width:100%;
+      }
+      .last{
+        width:100%;
+        text-align:left;
       }
     }
 `
