@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 
 
-const Qualifications = () => {
+const Qualifications = ({mode}) => {
   const [openfront, setOpenfront] = useState(true);
   const [opendata, setOpendata] = useState(false);
 
@@ -15,7 +15,7 @@ const Qualifications = () => {
     setOpendata(!opendata);
   }
   return (
-    <QualificationStyle id='qualifications'>
+    <QualificationStyle id='qualifications' mode={mode}>
         <h2>Qualifications</h2>
         <h4>My Personal journey</h4>
         <div className='section'>
@@ -56,6 +56,7 @@ margin: 4rem 10rem;
     h2{
     font-size:2rem;
     font-weight:600;
+    color: ${({ mode }) => mode ? '##494848': '#FBFBFB'};
   }
   .border{
     border:none;
@@ -77,19 +78,24 @@ margin: 4rem 10rem;
     font-weight:500;
     font-size:1rem;
     text-align:center;
+    color: ${({ mode }) => mode ? '##494848': '#FBFBFB'};
   }
   h2{
     text-align:center;
+    color: ${({ mode }) => mode ? '##494848': '#FBFBFB'};
   }
   h3{
     font-weight:600;
     font-size:1.5rem;
+    color: ${({ mode }) => mode ? '##494848': '#FBFBFB'};
   }
   p{
     font-size:1.2rem;
+    color: ${({ mode }) => mode ? '##494848': '#FBFBFB'};
   }
   li{
     font-size:1.2rem;
+    color: ${({ mode }) => mode ? '##494848': '#FBFBFB'};
   }
   
   .section{

@@ -6,6 +6,8 @@ import styled from 'styled-components';
 import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import { FiMoon } from 'react-icons/fi';
+import { FaStarAndCrescent } from 'react-icons/fa';
+
 
 
 
@@ -23,10 +25,10 @@ const {pathname} = useLocation();
             <li><a href='#myworks' style={{color:`${pathname === '/#myworks'? '#ed9ca9':''}`}}> My Works</a></li>
             <li><a href='#testimonials' style={{color:`${pathname === '/testimonials'? '#ed9ca9':''}`}}> Testimonials</a></li>
             <li><a href='#contact' style={{color:`${pathname === '/#contact'? '#ed9ca9':''}`}}> Contact</a></li>
-            <div onClick={()=> setMode(!mode)}>
+            <div onClick={()=> setMode(!mode)} className='mode'>
               {mode?
-                <img src={LightMode} alt="lightmode" className='w-[30px] h-[30px]' />:
-                <FiMoon className='h-[30px] w-[28px] hover:text-[#ed9ca9] hover:cursor-pointer'/>
+              <FiMoon className='h-[30px] w-[28px] hover:text-[#ed9ca9] hover:cursor-pointer'/>:
+                <FaStarAndCrescent className='h-[30px] w-[28px] hover:text-[#ed9ca9] hover:cursor-pointer text-[#ed9ca9]'/>
               }
             </div>
         </ul>
@@ -42,11 +44,12 @@ const NavStyle = styled.div`
   width:100%;
   right:0;
   padding:2rem 5rem;
-  background-color:${({ mode }) => mode ?'rgba(0,0,0, 0.7)':'#FBFBFB'};
+  background-color: ${({ $mode }) => $mode ? '#FBFBFB' : '#884a55'};
   z-index:99;
   h2{
     font-size:2rem;
     font-weight:600;
+    color: ${({ $mode }) => $mode ? '#000': '#FBFBFB'};
     span{
     }
   }
@@ -60,6 +63,7 @@ const NavStyle = styled.div`
       font-size:1.2rem;
       font-weight:600;
       color: #494848;
+      color: ${({ $mode }) => $mode ? '#FBFBFB': '##494848' };
       transition:.3s;
       span{
         font-weight:600;
@@ -70,7 +74,7 @@ const NavStyle = styled.div`
     }
   }
   @media screen and (max-width:680px){
-    padding:1rem 1.5rem;
+    padding:1rem;
       ul{
   display:${({menu})=>menu?'block':'none'};
   position:fixed;
@@ -79,10 +83,21 @@ const NavStyle = styled.div`
   height:fit-content;
   top:0;
   left:0;
-  padding:1rem;
+  padding:1rem 0;
   z-index:2;
   transition: all 2s linear;
     transform: ${({ menu }) => menu ? 'translateX(0)' : 'translateX(-100px)'};
+    li{
+      padding: 1rem 0;
+      color: gray;
+      &:hover{
+        background-color:#ed9ca9;
+        color:#FBFBFB;
+      }
+    }
+}
+.mode{
+  margin-left: 20px;
 }
     }
 `

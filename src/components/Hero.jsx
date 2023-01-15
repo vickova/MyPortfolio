@@ -4,9 +4,9 @@ import { FiGithub, FiLinkedin, FiTwitter, FiDownload } from 'react-icons/fi';
 import styled from 'styled-components';
 import Cv from '../images/cv/Victoria Olumide.pdf'
 
-const Hero = () => {
+const Hero = ({mode}) => {
   return (
-    <HeroStyle id='home'>
+    <HeroStyle id='home' mode={mode}>
       <div className='images'>
             <FiGithub className='hero-icons'/>
             <FiLinkedin className='hero-icons'/>
@@ -45,6 +45,7 @@ margin: 0 8rem;
   }
   .herotext{
     width:50%;
+    
   }
   .images{
     display:flex;
@@ -75,13 +76,16 @@ margin: 0 8rem;
   h2{
     font-size:4rem;
     line-height:4rem;
+    color: ${({ mode }) => mode ? '##494848': '#FBFBFB'};
   }
   h3{
     font-size:2rem;
+    color: ${({ mode }) => mode ? '##494848': '#FBFBFB'};
   }
   p{
     font-size:1.5rem;
     margin:1rem 0;
+    color: ${({ mode }) => mode ? '##494848': '#FBFBFB'};
   }
   .profile{
     width:300px;

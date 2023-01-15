@@ -13,7 +13,7 @@ import { FiGithub } from 'react-icons/fi';
 
 
 
-const MyWorks = () => {
+const MyWorks = ({mode}) => {
     const works = [
         {
             image:Vshop,
@@ -72,7 +72,7 @@ const MyWorks = () => {
         }
     ]
   return (
-    <WorkStyled id='myworks'>
+    <WorkStyled id='myworks' mode={mode}>
         <h2>My Works</h2>
         <div>
             {
@@ -109,7 +109,7 @@ const MyWorks = () => {
                     )
                 })
             }
-            <OtherProjects/>
+            <OtherProjects mode={mode}/>
         </div>
     </WorkStyled>
   )
@@ -122,20 +122,24 @@ const WorkStyled = styled.div`
     font-weight:600;
     text-align:center;
     margin: 3rem 0 1rem 0;
+    color: ${({ mode }) => mode ? '##494848': '#FBFBFB'};
   }
   h4{
     font-weight:500;
+    color: ${({ mode }) => mode ? '##494848': '#FBFBFB'};
   }
 
   h3{
     font-size:1.5rem;
     font-weight:400;
+    color: ${({ mode }) => mode ? '##494848': '#FBFBFB'};
   }
   .first{
     font-weight:600;
   }
   p{
     margin:1rem 0;
+    color: ${({ mode }) => mode ? '##494848': '#FBFBFB'};
   }
     .link{
         display:flex;
@@ -144,6 +148,7 @@ const WorkStyled = styled.div`
         .share{
             width:30px;
             height:30px;
+            color: ${({ mode }) => mode ? '##494848': '#FBFBFB'};
         }
     }
     .works{
@@ -189,7 +194,7 @@ const WorkStyled = styled.div`
         justify-content:space-between;
         li{
             text-decoration:none;
-            color: #4a4444;
+            color: ${({ mode }) => mode ? '##494848': '#FBFBFB'};
         }
     }
         @media screen and (min-width:760px){

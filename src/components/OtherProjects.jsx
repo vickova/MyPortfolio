@@ -3,7 +3,7 @@ import { FaRegShareSquare,FaGitAlt, FaRegFolder } from 'react-icons/fa';
 import styled from 'styled-components';
 
 
-const OtherProjects = () => {
+const OtherProjects = ({mode}) => {
   const Projects = [
     {
       name:'Decagon replicate',
@@ -48,9 +48,8 @@ const OtherProjects = () => {
       livesite:'https://topintern-first.netlify.app/',
     },
   ]
-  console.log(Projects.length)
   return (
-    <ProjectsStyle>
+    <ProjectsStyle mode={mode}>
       <h2>Other Projects</h2>
       <div className='projects'>
         {
@@ -98,23 +97,26 @@ color: rgb(35, 36, 41);
     font-size:1.2rem;
     font-size:500;
     margin:2rem 0;
+    color: ${({ mode }) => mode ? '##494848': '#FBFBFB'};
   }
   h3{
     color: rgb(237,156,169);
     font-weight:600;
+    color: ${({ mode }) => mode ? '##494848': '#FBFBFB'};
   }
   ul{
     display:flex;
     gap:1rem;
     li{
         text-decoration:none;
-        color: #4a4444;
+        color: ${({ mode }) => mode ? '##494848': '#FBFBFB'};
     }
 }
   .single-project{
     padding:1rem;
+    background-color: ${({ mode }) => mode ?'#fff': '#884a55'};
+    box-shadow: ${({ mode }) => mode ?'0 1px 2px 0 gray': '2px 1px 2px 2px #884a55'};
     border-radius:10px;
-    background-color: #fff;
   }
   .icons{
     display:flex;
@@ -124,6 +126,7 @@ color: rgb(35, 36, 41);
     .view{
       width: 30px;
       height:30px;
+      color: ${({ mode }) => mode ?'#ed9ca9' :'#FBFBFB'};
     }
   }
   @media screen and (min-width:760px){

@@ -18,7 +18,8 @@ const GlobalStyle = createGlobalStyle`
     body{
         font-family:'Poppins','Montserrat', sans-serif;
         width:100%;
-        background-color:#FBFBFB;
+        background-color: #FBFBFB;
+        background-color: ${({ mode }) => mode ?'#FBFBFB': '#884a55' };
     }
     h2, h3, p,li{
         color:#121212;

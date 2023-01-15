@@ -6,9 +6,9 @@ import LinkedIn from '../images/linkedin.svg';
 import styled from 'styled-components';
 import { FiGithub, FiFacebook, FiLinkedin, FiTwitter } from 'react-icons/fi';
 
-const Footer = () => {
+const Footer = ({mode}) => {
   return (
-    <FooterStyle>
+    <FooterStyle mode={mode}>
         <div>
             <h2>Victoria Olumide</h2>
             <h3>Frontend Developer and Data Analyst.</h3>
@@ -31,6 +31,7 @@ const Footer = () => {
 
 const FooterStyle = styled.div`
     background-color: #ed9ca9;
+    background-color: ${({ mode }) => mode ?'#ed9ca9': '#884a55'};
     border-radius: 10px 10px 0 0;
     display:flex;
     align-items:center;

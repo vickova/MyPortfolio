@@ -6,7 +6,7 @@ import { DiJavascript1 } from 'react-icons/di';
 import {AiFillFileExcel} from 'react-icons/ai';
 
 
-const Skills = () => {
+const Skills = ({mode}) => {
   const [openfront, setOpenfront] = useState(false);
   const [opendata, setOpendata] = useState(false);
 
@@ -19,7 +19,7 @@ const Skills = () => {
     setOpendata(!opendata);
   }
   return (
-    <SkillStyle openfront={openfront} opendata={opendata} id='skills'>
+    <SkillStyle openfront={openfront} opendata={opendata} id='skills' mode={mode}>
         <h2>Skills</h2>
         <h4>My technical level</h4>
         <div className='skill-flex'>
@@ -67,21 +67,26 @@ const SkillStyle = styled.div`
   h2{
     font-size:2rem;
     font-weight:600;
+    color: ${({ mode }) => mode ? '##494848': '#FBFBFB'};
   }
   h4{
     font-weight:500;
+    color: ${({ mode }) => mode ? '##494848': '#FBFBFB'};
   }
   h2, h4{
     text-align:center;
+    color: ${({ mode }) => mode ? '##494848': '#FBFBFB'};
   }
   h3{
     font-weight:400;
+    color: ${({ mode }) => mode ? '##494848': '#FBFBFB'};
   }
   .hide{
     display:none;
   }
   p{
     font-size:1rem;
+    color: ${({ mode }) => mode ? '##494848': '#FBFBFB'};
   }
 .skill-icon{
   color: #ed9ca9;
@@ -101,6 +106,7 @@ const SkillStyle = styled.div`
       padding: 1rem 0;
       display:flex;
       justify-content:space-between;
+      color: ${({ mode }) => mode ? '##494848': '#FBFBFB'};
       img{
         width:30px;
       }

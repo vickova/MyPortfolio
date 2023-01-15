@@ -50,18 +50,22 @@ h2{
     font-size:2rem;
     font-weight:600;
     text-align:center;
+    color: ${({ mode }) => mode ? '##494848': '#FBFBFB'};
   }
   h4{
     font-weight:500;
     text-align:center;
+    color: ${({ mode }) => mode ? '##494848': '#FBFBFB'};
   }
 
   h3{
     font-size:1.5rem;
     font-weight:500;
+    color: ${({ mode }) => mode ? '##494848': '#FBFBFB'};
   }
 p{
   font-size:1.2rem;
+  color: ${({ mode }) => mode ? '##494848': '#FBFBFB'};
 }
 .header{
   margin: 2rem 0;
@@ -85,6 +89,7 @@ p{
   .words{
     font-weight: 500;
     color: #666666;
+    color: ${({ mode }) => mode ? '##494848': '#e4e4e4'};
     margin: 1rem 2rem;
   }
   .title{

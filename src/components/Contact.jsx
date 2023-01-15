@@ -33,15 +33,18 @@ h2{
     font-size:2rem;
     font-weight:600;
     text-align:center;
+    color: ${({ mode }) => mode ? '##494848': '#FBFBFB'};
   }
   h4{
     font-weight:500;
     text-align:center;
+    color: ${({ mode }) => mode ? '##494848': '#FBFBFB'};
   }
 
   h3{
     font-size:1.5rem;
     font-weight:400;
+    color: ${({ mode }) => mode ? '##494848': '#FBFBFB'};
   }
   .sect{
     margin: 1rem;

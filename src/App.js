@@ -20,17 +20,17 @@ function App() {
   const [menu, setMenu] = useState(false);
   return (
     <AppStyle>
-      <GlobalStyle/>
+      <GlobalStyle mode={mode}/>
       <Navbar mode={mode} setMode={setMode} menu={menu} setMenu={setMenu}/>
         <section>
-          <Hero/>
-          <Skills/>
-          <Qualifications/>
-          <MyWorks/>
-          <Testimonial/>
-          <Contact/>
+          <Hero mode={mode}/>
+          <Skills mode={mode} />
+          <Qualifications mode={mode} />
+          <MyWorks mode={mode} />
+          <Testimonial mode={mode} />
+          <Contact mode={mode} />
         </section>
-        <Footer/>
+        <Footer mode={mode} />
     </AppStyle>
   );
 }
