@@ -22,7 +22,7 @@ function App() {
     <AppStyle>
       <GlobalStyle mode={mode}/>
       <Navbar mode={mode} setMode={setMode} menu={menu} setMenu={setMenu}/>
-        <section>
+        <section onClick={()=> setMenu(false)}>
           <Hero mode={mode}/>
           <Skills mode={mode} />
           <Qualifications mode={mode} />

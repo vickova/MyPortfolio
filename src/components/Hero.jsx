@@ -70,11 +70,16 @@ margin: 0 8rem;
   button{
     background-color: #ed9ca9;
     padding:1rem;
-    font-size:1.5rem;
+    font-size:1.2rem;
     font-weight:500;
     color:rgb(255, 255, 255);
     margin:2rem 0;
     border-radius:30px 0 30px 0;
+    &:hover{
+      box-shadow: 1px 1px 1px 1px gray;
+      cursor:pointer;
+      font-size:1.3rem;
+    }
     a{
     display:flex;
     align-items:center;

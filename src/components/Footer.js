@@ -39,9 +39,8 @@ const FooterStyle = styled.div`
     padding:2rem;
     margin-top:5rem;
     color:#fff;
-    height:40vh;
     p{
-        font-size:.8rem;
+        font-size:1rem;
     }
     h2, h3, p, li{
         color:#fff;
@@ -73,10 +72,16 @@ const FooterStyle = styled.div`
             color: #ecebeb;
         }
     }
+    @media screen and (min-width: 760px){
+        height: 50vh;
+    }
     @media screen and (max-width: 680px){
         display:block;
         h3{
             font-size:1rem;
+        }
+        p{
+            font-size:.8rem;
         }
         .hero-icons{
             width:25px;

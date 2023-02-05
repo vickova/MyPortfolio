@@ -108,6 +108,10 @@ button{
     color:rgb(255, 255, 255);
     margin:2rem 0;
     border-radius:5px 0 5px 0;
+    &:hover{
+      box-shadow: 1px 1px 1px 1px gray;
+      cursor:pointer;
+    }
 }
 @media screen and (min-width:760px){
     .sect{

@@ -81,6 +81,7 @@ margin: 4rem 10rem;
     padding:0 .5rem;
     width: 35%;
     font-size: 1.2rem;
+    font-weight:600;
   }
   .right-chev{
     background-color:#ed9ca9;
@@ -96,6 +97,9 @@ margin: 4rem 10rem;
     font-size:1rem;
     text-align:center;
     color: ${({ mode }) => mode ? 'pink': '#FBFBFB'};
+    &:hover{
+      color:#ed9ca9;
+    }
     span{
       display:block;
       font-size:1rem;
@@ -155,6 +159,9 @@ margin: 4rem 10rem;
       margin:4rem 0;
       h3{
         font-size:1.2rem;
+      }
+      .border{
+        width: 90%;
       }
       p, li{
         font-size:1rem;
