@@ -32,7 +32,6 @@ const Footer = ({mode}) => {
 const FooterStyle = styled.div`
     background-color: #ed9ca9;
     background-color: ${({ mode }) => mode ?'#ed9ca9': '#5f2b35'};
-    border-radius: 10px 10px 0 0;
     display:flex;
     align-items:center;
     flex-wrap:wrap;
@@ -40,6 +39,7 @@ const FooterStyle = styled.div`
     padding:2rem;
     margin-top:5rem;
     color:#fff;
+    height:40vh;
     p{
         font-size:.8rem;
     }

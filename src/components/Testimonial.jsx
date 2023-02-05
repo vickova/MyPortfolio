@@ -1,7 +1,11 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styled from 'styled-components';
 import Emmanuel from '../images/emmanuel.png';
 import Oluwaseun from '../images/oluwaseun.jpg';
+import { useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { ProjAnimation } from '../animation';
+import { motion } from 'framer-motion';
 
 
 const Testimonial = ({mode}) => {
@@ -19,8 +23,18 @@ const Testimonial = ({mode}) => {
       words:'The VO! Everyone needs you on their team. Overall best in intentionality and consistency',
     }
   ]
+  const controls = useAnimation();
+  const {ref, inView} = useInView();
+  useEffect(()=>{
+    if(inView){
+      controls.start('show')
+    }
+    else{
+      controls.start('hidden')
+    }
+  }, [controls, inView])
   return (
-    <TestimonialStyle id='testimonials' mode={mode}>
+    <TestimonialStyle id='testimonials' mode={mode} ref={ref} variants={ProjAnimation} initial='hidden' animate={controls}>
       <div className='header'>
         <h2>Testimonials</h2>
         <h4>My clients and Collaborators saying</h4>
@@ -44,7 +58,7 @@ const Testimonial = ({mode}) => {
     </TestimonialStyle>
   )
 }
-const TestimonialStyle = styled.div`
+const TestimonialStyle = styled(motion.div)`
 margin: 3rem 0;
 h2{
     font-size:2rem;
@@ -55,7 +69,7 @@ h2{
   h4{
     font-weight:500;
     text-align:center;
-    color: ${({ mode }) => mode ? '##494848': '#FBFBFB'};
+    color: ${({ mode }) => mode ? 'pink': '#FBFBFB'};
   }
 
   h3{

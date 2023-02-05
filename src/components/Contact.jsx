@@ -1,9 +1,24 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
+import { ProjAnimation } from '../animation';
+import { useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const Contact = ({mode}) => {
+  const controls = useAnimation();
+  const {ref, inView} = useInView();
+  console.log(inView)
+  useEffect(()=>{
+    if(inView){
+      controls.start('show')
+    }
+    else{
+      controls.start('hidden')
+    }
+  }, [controls, inView])
   return (
-    <ContactStyle id='contact' mode={mode}>
+    <ContactStyle id='contact' mode={mode} ref={ref} variants={ProjAnimation} initial='hidden' animate={controls}>
       <h2>Contact</h2>
       <h4>Get in touch</h4>
       <div className='form'>
@@ -27,7 +42,7 @@ const Contact = ({mode}) => {
   )
 }
 
-const ContactStyle = styled.div`
+const ContactStyle = styled(motion.div)`
 margin: 4rem;
 h2{
     font-size:2rem;
@@ -50,7 +65,7 @@ h2{
     margin: 1rem;
   }
 input, textarea{
-  background-color: #fff;
+  background-color: #efeded;
   box-shadow: 1px 1px 1px 1px gray;
   border-radius:10px;
   display:block;

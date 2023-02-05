@@ -4,12 +4,15 @@ import {FaCss3, FaReact, FaPython, FaChevronDown} from 'react-icons/fa';
 import { AiOutlineHtml5 } from 'react-icons/ai';
 import { DiJavascript1 } from 'react-icons/di';
 import {AiFillFileExcel} from 'react-icons/ai';
-
+import { ProjAnimation } from '../animation';
+import { motion } from 'framer-motion';
+import { useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { useEffect } from 'react';
 
 const Skills = ({mode}) => {
   const [openfront, setOpenfront] = useState(false);
   const [opendata, setOpendata] = useState(false);
-
   const OpenFrontHandler =()=>{
     setOpendata(false);
     setOpenfront(!openfront);
@@ -18,8 +21,19 @@ const Skills = ({mode}) => {
     setOpenfront(false);
     setOpendata(!opendata);
   }
+  const controls = useAnimation();
+  const {ref, inView} = useInView();
+  console.log(inView)
+  useEffect(()=>{
+    if(inView){
+      controls.start('show')
+    }
+    else{
+      controls.start('hidden')
+    }
+  }, [controls, inView])
   return (
-    <SkillStyle openfront={openfront} opendata={opendata} id='skills' mode={mode}>
+    <SkillStyle openfront={openfront} opendata={opendata} id='skills' mode={mode} ref={ref} variants={ProjAnimation} initial='hidden' animate={controls}>
         <h2>Skills</h2>
         <h4>My technical level</h4>
         <div className='skill-flex'>
@@ -62,8 +76,8 @@ const Skills = ({mode}) => {
   )
 }
 
-const SkillStyle = styled.div`
-  margin: 6rem 4rem;
+const SkillStyle = styled(motion.div)`
+  margin: 10rem 4rem;
   h2{
     font-size:2rem;
     font-weight:600;
@@ -71,7 +85,7 @@ const SkillStyle = styled.div`
   }
   h4{
     font-weight:500;
-    color: ${({ mode }) => mode ? '##494848': '#FBFBFB'};
+    color: ${({ mode }) => mode ? 'pink': '#FBFBFB'};
   }
   h2, h4{
     text-align:center;

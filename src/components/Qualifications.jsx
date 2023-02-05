@@ -1,5 +1,9 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
+import { useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { motion } from 'framer-motion';
+import { ProjAnimation } from '../animation';
 
 
 const Qualifications = ({mode}) => {
@@ -14,8 +18,19 @@ const Qualifications = ({mode}) => {
     setOpenfront(false);
     setOpendata(!opendata);
   }
+  const controls = useAnimation();
+  const {ref, inView} = useInView();
+  console.log(inView)
+  useEffect(()=>{
+    if(inView){
+      controls.start('show')
+    }
+    else{
+      controls.start('hidden')
+    }
+  }, [controls, inView])
   return (
-    <QualificationStyle id='qualifications' mode={mode}>
+    <QualificationStyle id='qualifications' mode={mode} ref={ref} variants={ProjAnimation} initial='hidden' animate={controls}>
         <h2>Qualifications</h2>
         <h4>My Personal journey</h4>
         <div className='section'>
@@ -23,14 +38,14 @@ const Qualifications = ({mode}) => {
             <h3>Experience</h3>
                 <div>
                   <div className='qualify'>
-                    <h4 className={openfront? 'border':''} onClick={OpenFrontHandler}>Cogenie</h4>
+                    <h4 className={openfront? 'border':''} onClick={OpenFrontHandler}>Cogenie <span> start date: 2022</span></h4>
                     <ul className={openfront? '':'set'}>
                         <li><div className='right-chev'/> <span>contributed to the development of Cway World Wide using React and Styled Components</span></li>
                         <li><div className='right-chev'/> <span>Collaborated with colleagues and senior developers. I also got better in the understanding of git and github</span></li>
                     </ul>
                   </div>
                   <div className='qualify'>
-                    <h4 className={opendata? 'border':''} onClick={OpenDataHandler}>Tribnova</h4>
+                    <h4 className={opendata? 'border':''} onClick={OpenDataHandler}>Tribnova <span>start date: 2022</span></h4>
                     <ul className={opendata? '':'set'}>
                         <li><div className='right-chev'/> <span>I built different pages of the tribinova website like the dashborad section, the sign in section, etc.</span></li>
                         <li><div className='right-chev'/> <span>I worked with colleagues and senior developers, contibuting ideas and profering solutions to prolems when they arise</span></li>
@@ -51,7 +66,7 @@ const Qualifications = ({mode}) => {
   )
 }
 
-const QualificationStyle = styled.div`
+const QualificationStyle = styled(motion.div)`
 margin: 4rem 10rem;
     h2{
     font-size:2rem;
@@ -64,6 +79,8 @@ margin: 4rem 10rem;
     height:fit-content;
     color:#ed9ca9;
     padding:0 .5rem;
+    width: 35%;
+    font-size: 1.2rem;
   }
   .right-chev{
     background-color:#ed9ca9;
@@ -78,7 +95,11 @@ margin: 4rem 10rem;
     font-weight:500;
     font-size:1rem;
     text-align:center;
-    color: ${({ mode }) => mode ? '##494848': '#FBFBFB'};
+    color: ${({ mode }) => mode ? 'pink': '#FBFBFB'};
+    span{
+      display:block;
+      font-size:1rem;
+    }
   }
   h2{
     text-align:center;

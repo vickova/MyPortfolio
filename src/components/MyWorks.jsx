@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Vshop from '../images/vshop.png';
 import Movie from '../images/movie.png';
 import Weather from '../images/weather.png';
@@ -8,9 +8,13 @@ import Analysis from '../images/analysis.png';
 import Github from '../images/github.svg';
 import styled from 'styled-components';
 import OtherProjects from './OtherProjects';
-import { FaRegShareSquare } from 'react-icons/fa';
-import { FiGithub } from 'react-icons/fi';
 
+import { motion } from 'framer-motion';
+import { useScroll } from './userScroll';
+import { useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { ProjAnimation } from '../animation';
+import WorkItem from './WorkItem';
 
 
 const MyWorks = ({mode}) => {
@@ -70,7 +74,8 @@ const MyWorks = ({mode}) => {
             livesite:'https://newsbegins.vercel.app/',
             type:'Personal'
         }
-    ]
+    ];
+
   return (
     <WorkStyled id='myworks' mode={mode}>
         <h2>My Works</h2>
@@ -78,34 +83,7 @@ const MyWorks = ({mode}) => {
             {
                 works.map((items, i)=>{
                     return(
-                        <div key={i} className='works'>
-                            <div className='image-cover' style={{background:`url(${items.image}`, backgroundRepeat:'no-repeat', backgroundSize:'cover'}}>
-                            </div>
-                            <div className='text'>
-                                <h3 className='first'>{items.type} Project</h3>
-                                <h3>{items.name}</h3>
-                                <p>{items.description}</p>
-                                <div className='link'>
-                                    <a href={items.github} target='_blank'>
-                                        <FiGithub className='share'/>
-                                    </a>
-                                    <a href={items.livesite} target='_blank'>
-                                        <FaRegShareSquare className='share'/>
-                                    </a>
-                                </div>
-                                <ul className='lists'>
-                                {
-                                    items.resouces.map((lst, i)=>{
-                                        return(
-                                            <li key={i}>
-                                                {lst}
-                                            </li>
-                                        )
-                                    })
-                                }
-                                </ul>
-                            </div>
-                        </div>
+                        <WorkItem image={items.image} name={items.name} description={items.description} livesite={items.livesite} type={items.type} github={items.github} items={items} key={i}/>
                     )
                 })
             }
@@ -115,8 +93,8 @@ const MyWorks = ({mode}) => {
   )
 }
 
-const WorkStyled = styled.div`
-    margin:4rem;
+const WorkStyled = styled(motion.div)`
+    margin:8rem 4rem;
     h2{
     font-size:2rem;
     font-weight:600;
@@ -159,7 +137,6 @@ const WorkStyled = styled.div`
         align-items:center;
         justify-content:center;
         gap:1rem;
-        margin: 4rem 0;
         z-index:-99;
         .image-cover{
         padding:1rem;

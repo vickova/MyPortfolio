@@ -1,7 +1,10 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { FaRegShareSquare,FaGitAlt, FaRegFolder } from 'react-icons/fa';
 import styled from 'styled-components';
-
+import { OtherSingleProjectAnim, ProjAnimation } from '../animation';
+import { motion } from 'framer-motion';
+import { useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const OtherProjects = ({mode}) => {
   const Projects = [
@@ -48,13 +51,23 @@ const OtherProjects = ({mode}) => {
       livesite:'https://topintern-first.netlify.app/',
     },
   ]
+  const controls = useAnimation();
+  const {ref, inView} = useInView();
+  useEffect(()=>{
+    if(inView){
+      controls.start('show')
+    }
+    else{
+      controls.start('hidden')
+    }
+  }, [controls, inView])
   return (
-    <ProjectsStyle mode={mode}>
+    <ProjectsStyle mode={mode} ref={ref} variants={ProjAnimation} initial='hidden' animate={controls}>
       <h2>Other Projects</h2>
       <div className='projects'>
         {
           Projects.map((item, i)=>{
-            return <div className='single-project' key={i}>
+            return <motion.div className='single-project' key={i} variants={OtherSingleProjectAnim}>
               <div className='icons'>
                 <a href={item.livesite} target='_blank'>
                 <FaRegShareSquare className='view'/>
@@ -76,7 +89,7 @@ const OtherProjects = ({mode}) => {
                   })
               }
             </ul>
-            </div>
+            </motion.div>
           })
         }
       </div>
@@ -84,7 +97,7 @@ const OtherProjects = ({mode}) => {
   )
 }
 
-const ProjectsStyle = styled.div`
+const ProjectsStyle = styled(motion.div)`
 margin: 4rem 1rem;
 color: rgb(35, 36, 41);
   .projects{
@@ -114,9 +127,12 @@ color: rgb(35, 36, 41);
 }
   .single-project{
     padding:1rem;
-    background-color: ${({ mode }) => mode ?'#fff': '#884a55'};
+    background-color: ${({ mode }) => mode ?'#fbfbfb': '#884a55'};
     box-shadow:1px 1px 2px 1px ${({ mode }) => mode ?'gray': '#38151b'};
     border-radius:10px;
+    &:hover{
+      background: linear-gradient(rgba(56, 21, 27, 0.2), transparent)
+    }
   }
   .icons{
     display:flex;

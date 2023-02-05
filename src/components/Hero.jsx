@@ -2,33 +2,41 @@ import React from 'react';
 import Vicky from '../images/vicky-rm-bg.png';
 import { FiGithub, FiLinkedin, FiTwitter, FiDownload } from 'react-icons/fi';
 import styled from 'styled-components';
-import Cv from '../images/cv/Victoria Olumide.pdf'
+import Cv from '../images/cv/Victoria Olumide.pdf';
+import { motion } from 'framer-motion';
+import { SectionAnimation, TextAnimation, PictureAnimation, titleAnim } from '../animation';
 
 const Hero = ({mode}) => {
   return (
     <HeroStyle id='home' mode={mode}>
       <div className='images'>
-            <FiGithub className='hero-icons'/>
-            <FiLinkedin className='hero-icons'/>
-            <FiTwitter className='hero-icons'/>
+            <a href="https://github.com/vickova" target='_blank'>
+              <FiGithub className='hero-icons'/>
+            </a>
+            <a href="https://www.linkedin.com/in/victoria-olumide-90439b163/" target='_blank'>
+              <FiLinkedin className='hero-icons'/>
+            </a>
+            <a href="https://twitter.com/OlumideVictori3" target='_blank'>
+              <FiTwitter className='hero-icons'/>
+            </a>
 
         </div>
-        <div className='heros'>
-        <div className='herotext'>
-            <h2>Hello, I'm Victoria Olumide</h2>
-            <h3>A Daring Frontend Developer and Data Analyst</h3>
-            <p>I optimize user experience by implementing visual elements that users see and interact with within a web application</p>
-            <button><a href={Cv} target='_blank'><span>Download CV</span><FiDownload/></a></button>
-        </div>
-        <div className='profile'>
-          <img src={Vicky} alt="Victoria Olumide"/>
-        </div>
-        </div>
+        <motion.div className='heros' variants={SectionAnimation} initial='hidden' animate='show'>
+          <motion.div className='herotext' variants={TextAnimation}>
+              <motion.h2 variants={titleAnim}>Hello, I'm Victoria Olumide</motion.h2>
+              <motion.h3 variants={titleAnim}>A Daring Frontend Developer and Data Analyst</motion.h3>
+              <motion.p variants={titleAnim}>I optimize user experience by implementing visual elements that users see and interact with within a web application</motion.p>
+              <motion.button variants={titleAnim}><a href={Cv} target='_blank'><span>Download CV</span><FiDownload/></a></motion.button>
+          </motion.div>
+          <motion.div className='profile' variants={PictureAnimation}>
+            <img src={Vicky} alt="Victoria Olumide"/>
+          </motion.div>
+        </motion.div>
     </HeroStyle>
   )
 }
 
-const HeroStyle = styled.div`
+const HeroStyle = styled(motion.div)`
 margin: 0 8rem;
   display:flex;
   gap:2rem;
@@ -36,7 +44,7 @@ margin: 0 8rem;
     display:flex;
     justify-content:center;
     gap:2rem;
-    margin: 0 4rem;
+    margin: 0 0;
   }
   .hero-icons{
     color:#ed9ca9;
