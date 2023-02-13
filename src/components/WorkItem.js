@@ -8,7 +8,7 @@ import { PictureAnimation, ProjAnimation } from '../animation';
 
 const WorkItem = ({name, description, image, livesite, type, github, items}) => {
     const controls = useAnimation();
-  const {ref, inView} = useInView();
+  const {ref, inView} = useInView({threshold:0.2});
   useEffect(()=>{
     if(inView){
       controls.start('show')
@@ -26,10 +26,10 @@ const WorkItem = ({name, description, image, livesite, type, github, items}) => 
             <h3>{name}</h3>
             <p>{description}</p>
             <div className='link'>
-                <a href={github} target='_blank'>
+                <a href={github} target='_blank' rel='noreferrer'>
                     <FiGithub className='share'/>
                 </a>
-                <a href={livesite} target='_blank'>
+                <a href={livesite} target='_blank' rel='noreferrer'>
                     <FaRegShareSquare className='share'/>
                 </a>
             </div>

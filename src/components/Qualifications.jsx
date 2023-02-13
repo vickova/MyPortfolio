@@ -1,10 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import styled from 'styled-components';
 import { useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { motion } from 'framer-motion';
 import { ProjAnimation } from '../animation';
-
+import { QualificationStyle } from '../Style';
 
 const Qualifications = ({mode}) => {
   const [openfront, setOpenfront] = useState(true);
@@ -65,126 +63,4 @@ const Qualifications = ({mode}) => {
     </QualificationStyle>
   )
 }
-
-const QualificationStyle = styled(motion.div)`
-margin: 4rem 10rem;
-    h2{
-    font-size:2rem;
-    font-weight:600;
-    color: ${({ mode }) => mode ? '##494848': '#FBFBFB'};
-  }
-  .border{
-    border:none;
-    border-left: 3px solid #ed9ca9;
-    height:fit-content;
-    color:#ed9ca9;
-    padding:0 .5rem;
-    width: 35%;
-    font-size: 1.2rem;
-    font-weight:600;
-  }
-  .right-chev{
-    background-color:#ed9ca9;
-    width:10px;
-    height:10px;
-    border-radius:50%;
-  }
-  .set{
-    display:none;
-  }
-  h4{
-    font-weight:500;
-    font-size:1rem;
-    text-align:center;
-    color: ${({ mode }) => mode ? 'pink': '#FBFBFB'};
-    &:hover{
-      color:#ed9ca9;
-    }
-    span{
-      display:block;
-      font-size:1rem;
-    }
-  }
-  h2{
-    text-align:center;
-    color: ${({ mode }) => mode ? '##494848': '#FBFBFB'};
-  }
-  h3{
-    font-weight:600;
-    font-size:1.5rem;
-    color: ${({ mode }) => mode ? '##494848': '#FBFBFB'};
-  }
-  p{
-    font-size:1.2rem;
-    color: ${({ mode }) => mode ? '##494848': '#FBFBFB'};
-  }
-  li{
-    font-size:1.2rem;
-    color: ${({ mode }) => mode ? '##494848': '#FBFBFB'};
-  }
-  
-  .section{
-    display:flex;
-    justify-content:center;
-    gap:2rem;
-    margin:2rem 0;
-  }
- 
-  .last{
-    text-align:right;
-    width: 40%;
-    p{
-      margin: 1rem 0;
-    }
-  }
-  .first{
-    border-right:3px solid #ed9ca9;
-    padding-right:1rem;
-  }
-  .qualify{
-    display:flex;
-    gap:1rem;
-    margin:1rem 0;
-    h4{
-      text-align:left;
-    }
-    ul{
-      li{
-        display:flex;
-        gap:.5rem;
-      }
-    }
-  }
-  @media screen and (max-width:680px){
-      margin:4rem 0;
-      h3{
-        font-size:1.2rem;
-      }
-      .border{
-        width: 90%;
-      }
-      p, li{
-        font-size:1rem;
-      }
-      .qualify{
-        flex-direction:column;
-      }
-      .last{
-        p{
-          font-size:1rem;
-        }
-      }
-      .section{
-        display:block;
-      }
-      .first{
-        border:none;
-        width:100%;
-      }
-      .last{
-        width:100%;
-        text-align:left;
-      }
-    }
-`
 export default Qualifications

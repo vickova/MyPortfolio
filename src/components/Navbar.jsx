@@ -1,13 +1,9 @@
 import React from 'react';
 import Burger from './Burger';
-import LightMode from '../images/darkmode.svg';
-import DarkMode from '../images/lightmode.svg';
-import styled from 'styled-components';
-import { Link, useLocation } from 'react-router-dom';
-import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { FiMoon } from 'react-icons/fi';
 import { FaStarAndCrescent } from 'react-icons/fa';
-
+import { NavStyle } from '../Style';
 
 
 
@@ -35,71 +31,5 @@ const {pathname} = useLocation();
     </NavStyle>
   )
 }
-
-const NavStyle = styled.div`
-  position:fixed;
-  display:flex;
-  justify-content:space-between;
-  top:0;
-  width:100%;
-  right:0;
-  padding:2rem 5rem;
-  background-color: ${({ $mode }) => $mode ? '#FBFBFB' : '#884a55'};
-  z-index:99;
-  h2{
-    font-size:2rem;
-    font-weight:600;
-    color: ${({ $mode }) => $mode ? '#000': '#FBFBFB'};
-    span{
-    }
-  }
-  ul{
-    display:flex;
-    justify-content:space-between;
-    transition: all 2s linear;
-    transform: ${({ menu }) => menu ? 'translateX(20px)' : 'translateX(-100px)'};
-    li{
-      margin:0 1rem;
-      font-size:1.2rem;
-      font-weight:600;
-      color: #494848;
-      color: ${({ $mode }) => $mode ?'##494848': '#FBFBFB' };
-      transition:.3s;
-      span{
-        font-weight:600;
-      }
-    }
-    li:hover{
-      color: #ed9ca9;
-    }
-  }
-  @media screen and (max-width:680px){
-    padding:1rem;
-      ul{
-  display:${({menu})=>menu?'block':'none'};
-  position:fixed;
-  background-color:#fff;
-  width:50%;
-  height:fit-content;
-  top:0;
-  left:0;
-  padding:1rem 0;
-  z-index:2;
-  transition: all 2s linear;
-    transform: ${({ menu }) => menu ? 'translateX(0)' : 'translateX(-100px)'};
-    li{
-      padding: 1rem 0;
-      color: gray;
-      &:hover{
-        background-color:#ed9ca9;
-        color:#FBFBFB;
-      }
-    }
-}
-.mode{
-  margin-left: 20px;
-}
-    }
-`
 
 export default Navbar

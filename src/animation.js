@@ -51,6 +51,16 @@ export const ProjAnimation = {
         scale:0
     }
 }
+export const OtherProjAnimation = {
+    hidden:{scale:0.7},
+    show:{
+        scale: 1,
+        transition: {staggerChildren: 0.5,when: "beforeChildren", ease: "easeOut", duration:0.5}
+    },
+    exit:{
+        scale:0
+    }
+}
 export const OtherSingleProjectAnim = {
     hidden:{
         x:-300,
