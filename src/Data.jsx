@@ -6,8 +6,18 @@ import News from './images/news.png';
 import Analysis from './images/analysis.png';
 import Emmanuel from './images/emmanuel.jpg';
 import Oluwaseun from './images/oluwaseun.jpg';
+import Taskswift from './images/Taskswift.png';
 
 export const works = [
+    {
+        image:Taskswift,
+        name:'TaskSwift',
+        description:'A TodoList web application that helps user organize their tasks into categories. This web applicationallows user perform CRUD operations like delete tasks, create tasks, update tasks, create category, delete category, etc.',
+        resouces: ['Reactjs', 'Nodejs', 'Express', 'Vercel', 'React-toastify'],
+        github:'https://github.com/vickova/TodoList-App',
+        livesite:'https://todo-list-app-vickova.vercel.app/',
+        type:'Personal'
+    },
     {
         image:Vshop,
         name:'VShop E-commerce',
