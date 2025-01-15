@@ -7,12 +7,42 @@ import Analysis from './images/analysis.png';
 import Emmanuel from './images/emmanuel.jpg';
 import Oluwaseun from './images/oluwaseun.jpg';
 import Taskswift from './images/Taskswift.png';
+import FarmSwift from './images/FarmS.png';
+import Coalition from './images/Coalition.png';
+import Darads from './images/Darads.png';
 
 export const works = [
+  {
+    image:FarmSwift,
+    name:'FarmSwift',
+    description:'A web application that makes it easy for farmers to connect with their customers',
+    resouces: ['Reactjs', 'Nodejs', 'Express', 'Vercel'],
+    github:'https://github.com/vickova/FarmSwift',
+    livesite:'https://todo-list-app-vickova.vercel.app/',
+    type:'Personal'
+},
+{
+  image:Darads,
+  name:'Darads',
+  description:'A e-commerce web application where user can purchase gifts for family and friend',
+  resouces: ['Reactjs', '.Net', 'Vercel'],
+  github:'',
+  livesite:'',
+  type:'Team work'
+},
+  {
+    image:Coalition,
+    name:'TaskSwift',
+    description:'A project I worked on for the final stage of an interview',
+    resouces: ['Reactjs', 'Nodejs', 'Express', 'Vercel'],
+    github:'',
+    livesite:'',
+    type:'Personal'
+},
     {
         image:Taskswift,
         name:'TaskSwift',
-        description:'A TodoList web application that helps user organize their tasks into categories. This web applicationallows user perform CRUD operations like delete tasks, create tasks, update tasks, create category, delete category, etc.',
+        description:'A TodoList web application that helps users organize their tasks into categories. This web applicationallows user perform CRUD operations like delete tasks, create tasks, update tasks, create category, delete category, etc.',
         resouces: ['Reactjs', 'Nodejs', 'Express', 'Vercel', 'React-toastify'],
         github:'https://github.com/vickova/TodoList-App',
         livesite:'https://todo-list-app-vickova.vercel.app/',

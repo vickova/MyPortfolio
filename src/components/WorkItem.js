@@ -19,7 +19,8 @@ const WorkItem = ({name, description, image, livesite, type, github, items}) => 
   }, [controls, inView])
   return (
     <motion.div className='works my-[3rem]' ref={ref} variants={ProjAnimation} initial='hidden' animate={controls}>
-        <motion.div className='image-cover' style={{background:`url(${image}`, backgroundRepeat:'no-repeat', backgroundSize:'cover'}}>
+        <motion.div className='image-cover' style={{height:'fit-content'}}>
+          <img src={image} alt=''/>
         </motion.div>
         <motion.div className='text' variants={PictureAnimation}>
             <h3 className='first'>{type} Project</h3>

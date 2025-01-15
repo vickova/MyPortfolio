@@ -16,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
         }
     }
     body{
-        font-family:'Poppins','Montserrat', sans-serif;
+        font-family: "Lato", serif;
         width:100%;
         background-color: #FBFBFB;
         background-color: ${({ mode }) => mode ?'#FBFBFB': '#884a55' };
