@@ -40,7 +40,7 @@ const Skills = ({mode}) => {
                 <div className='skillset' onClick={OpenFrontHandler}>
                   <div>
                     <h3>Frontend Development</h3>
-                    <p>2years+ experience</p>
+                    <p>4years+ experience</p>
                     </div>
                     
                     <FaChevronDown className='chev first'/>
