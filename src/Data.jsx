@@ -24,7 +24,7 @@ export const works = [
 {
   image:Darads,
   name:'Darads',
-  description:'A e-commerce web application where user can purchase gifts for family and friend',
+  description:'An e-commerce web application where user can purchase gifts for family and friend',
   resouces: ['Reactjs', '.Net', 'Vercel'],
   github:'',
   livesite:'',
