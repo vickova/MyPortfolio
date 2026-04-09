@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import { FaRegShareSquare, FaRegFolder } from 'react-icons/fa';
-import { OtherSingleProjectAnim, ProjAnimation, OtherProjAnimation } from '../animation';
+import { OtherSingleProjectAnim, OtherProjAnimation } from '../animation';
 import { motion } from 'framer-motion';
 import { useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
