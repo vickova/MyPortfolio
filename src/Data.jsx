@@ -10,15 +10,25 @@ import Taskswift from './images/Taskswift.png';
 import FarmSwift from './images/FarmS.png';
 import Coalition from './images/Coalition.png';
 import Darads from './images/Darads.png';
+import OutfitLibrary from './images/Outfitlibrary.png';
 
 export const works = [
+  {
+    image:OutfitLibrary,
+    name:'OutfitLibrary',
+    description:'A web application for managing and sharing outfit ideas. Users can create and organize their outfit collections, share them with friends, and get inspiration from others.',
+    resouces: ['Reactjs', 'Nodejs', 'Express', 'Vercel'],
+    github:'https://github.com/vickova/OutFitLibrary.git',
+    livesite:'https://out-fit-library.vercel.app/',
+    type:'Personal'
+},
   {
     image:FarmSwift,
     name:'FarmSwift',
     description:'A web application that makes it easy for farmers to connect with their customers',
     resouces: ['Reactjs', 'Nodejs', 'Express', 'Vercel'],
     github:'https://github.com/vickova/FarmSwift',
-    livesite:'https://todo-list-app-vickova.vercel.app/',
+    livesite:'https://farm-swift.vercel.app/',
     type:'Personal'
 },
 {
