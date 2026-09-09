@@ -1,33 +1,38 @@
-import React,   {useState} from 'react';
+import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import Marquee from './components/Marquee';
+import About from './components/About';
+import Work from './components/Work';
+import Experience from './components/Experience';
 import Skills from './components/Skills';
-import Qualifications from './components/Qualifications';
-import GlobalStyle from './components/GlobalStyle';
-import MyWorks from './components/MyWorks';
-import Testimonial from './components/Testimonial';
+import Education from './components/Education';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import { AppStyle } from './Style';
 
-function App() {
-  const [mode, setMode] = useState(true);
-  const [menu, setMenu] = useState(false);
+import './App.css';
+import OtherProjects from './components/OtherProjects';
+
+const App = () => {
   return (
-    <AppStyle>
-      <GlobalStyle mode={mode}/>
-      <Navbar mode={mode} setMode={setMode} menu={menu} setMenu={setMenu}/>
-        <section onClick={()=> setMenu(false)}>
-          <Hero mode={mode}/>
-          <Skills mode={mode} />
-          <Qualifications mode={mode} />
-          <MyWorks mode={mode} />
-          <Testimonial mode={mode} />
-          <Contact mode={mode} />
-        </section>
-        <Footer mode={mode} />
-    </AppStyle>
+    <>
+      <Navbar />
+
+      <main style={{padding:'.8rem'}}>
+        <Hero />
+        <Marquee />
+        <About />
+        <Work />
+        <OtherProjects/>
+        <Experience />
+        <Skills />
+        <Education />
+        <Contact />
+      </main>
+
+      <Footer />
+    </>
   );
-}
+};
 
 export default App;

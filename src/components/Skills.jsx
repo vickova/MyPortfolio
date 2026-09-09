@@ -1,77 +1,79 @@
-import React,{useState} from 'react';
-import {FaCss3, FaReact, FaPython, FaChevronDown} from 'react-icons/fa';
-import { AiOutlineHtml5 } from 'react-icons/ai';
-import { DiJavascript1 } from 'react-icons/di';
-import {AiFillFileExcel} from 'react-icons/ai';
-import { ProjAnimation } from '../animation';
-import { useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { useEffect } from 'react';
-import { SkillStyle } from '../Style';
+import React from 'react';
 
-const Skills = ({mode}) => {
-  const [openfront, setOpenfront] = useState(false);
-  const [opendata, setOpendata] = useState(false);
-  const OpenFrontHandler =()=>{
-    setOpendata(false);
-    setOpenfront(!openfront);
-  }
-  const OpenDataHandler =()=>{
-    setOpenfront(false);
-    setOpendata(!opendata);
-  }
-  const controls = useAnimation();
-  const {ref, inView} = useInView();
-  console.log(inView)
-  useEffect(()=>{
-    if(inView){
-      controls.start('show')
-    }
-    else{
-      controls.start('hidden')
-    }
-  }, [controls, inView])
+const skillGroups = [
+  {
+    title: 'Frontend',
+    skills: [
+      'ReactJS',
+      'Next.js',
+      'TypeScript',
+      'JavaScript',
+      'Tailwind CSS',
+      'Material UI',
+    ],
+  },
+  {
+    title: 'State & data',
+    skills: [
+      'TanStack Query',
+      'REST APIs',
+      'Axios',
+      'Fetch API',
+    ],
+  },
+  {
+    title: 'Backend & tools',
+    skills: [
+      'Node.js',
+      'Express.js',
+      'MongoDB',
+      'Git',
+      'GitHub',
+      'Vercel',
+    ],
+  },
+  {
+    title: 'Beyond code',
+    skills: [
+      'Agile',
+      'Task tracking',
+      'Stakeholder comms',
+      'Public speaking',
+    ],
+  },
+];
+
+const Skills = () => {
   return (
-    <SkillStyle openfront={openfront} opendata={opendata} id='skills' mode={mode} ref={ref} variants={ProjAnimation} initial='hidden' animate={controls}>
-        <h2>Skills</h2>
-        <h4>My technical level</h4>
-        <div className='skill-flex'>
-            <div>
-                <div className='skillset' onClick={OpenFrontHandler}>
-                  <div>
-                    <h3>Frontend Development</h3>
-                    <p>4years+ experience</p>
-                    </div>
-                    
-                    <FaChevronDown className='chev first'/>
-                </div>
-                <ul className={openfront?'':'hide'}>
-                  <li>Html <AiOutlineHtml5 className='skill-icon'/></li>
-                  <li>Css <FaCss3 className='skill-icon'/></li>
-                  <li>Javascript <DiJavascript1 className='skill-icon'/></li>
-                  <li>React js <FaReact className='skill-icon'/></li>
-                  <li>Tailwind css</li>
-                  <li>Styled components </li>
-                  <li>Next js</li>
-                </ul>
+    <section className="wrap skills" id="skills">
+      <div className="section-head">
+        <h2>What I work with</h2>
+
+        <p>
+          The tools I reach for most.
+        </p>
+      </div>
+
+      <div className="skill-groups">
+        {skillGroups.map((group) => (
+          <div
+            className="skill-card"
+            key={group.title}
+          >
+            <h4>{group.title}</h4>
+
+            <div className="pill-row">
+              {group.skills.map((skill) => (
+                <span key={skill}>
+                  {skill}
+                </span>
+              ))}
             </div>
-            <div className='left'>
-                <div className='skillset' onClick={OpenDataHandler}>
-                  <div>
-                    <h3>Data Analysis</h3>
-                    <p>1year+ experience</p>
-                  </div>
-                    <FaChevronDown className='chev last'/>
-                </div>
-                <ul className={opendata?'':'hide'}>
-                  <li>Python <FaPython className='skill-icon'/></li>
-                  <li>Excel <AiFillFileExcel className='skill-icon'/></li>
-                  <li>Power Bi</li>
-                  <li>Tableau</li>
-                </ul>
-            </div>
-        </div>
-    </SkillStyle>
-  )
-}
-export default Skills
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default Skills;

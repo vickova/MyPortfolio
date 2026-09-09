@@ -11,15 +11,36 @@ import FarmSwift from './images/FarmS.png';
 import Coalition from './images/Coalition.png';
 import Darads from './images/Darads.png';
 import OutfitLibrary from './images/Outfitlibrary.png';
+import MedixDeck from './images/Medixdeck.png';
+import HHG from './images/HHG.png';
+
 
 export const works = [
+  {
+    image:HHG,
+    name:'Hebron Heights and Gardens',
+    description:'Hebron Heights and Gardens is an e-commerce management platform where I contributed to the frontend development of the admin dashboard. I built responsive interfaces for managing products, categories, users, orders, consultations, and notifications using Next.js, TypeScript, React, MUI, and TanStack Query, while integrating REST APIs and implementing reusable data-driven components.',
+    resouces: ['Next.js', 'React', 'TypeScript', 'Material UI', 'TanStack Query', 'REST APIs', 'Axios', 'Git', 'Responsive Design', 'Admin Dashboards'],
+    github:'https://github.com/vickova/hebron-heights',
+    livesite:'https://hebron-heights.vercel.app/',
+    type:'External'
+},
+  {
+    image:MedixDeck,
+    name:'MedixDeck',
+    description:'MedixDeck is a healthcare technology platform where I worked as a Frontend Engineer, building and improving responsive web applications using ReactJS and TypeScript. I developed reusable UI components, integrated REST APIs, implemented data-driven dashboards and management interfaces, and used TanStack Query for server-state management. I also worked on authentication, role-based access, routing, and API integration while collaborating with backend developers to deliver reliable application features.',
+    resouces: ['React', 'TypeScript', 'TanStack Query', 'REST APIs', 'JavaScript', 'HTML/CSS', 'Git', 'Responsive Design', 'Authentication', 'Role-Based Access', 'Data Tables'],
+    github:'https://github.com/vickova',
+    livesite:'https://out-fit-library.vercel.app/',
+    type:'Personal'
+},
   {
     image:OutfitLibrary,
     name:'OutfitLibrary',
     description:'A web application for managing and sharing outfit ideas. Users can create and organize their outfit collections, share them with friends, and get inspiration from others.',
     resouces: ['Reactjs', 'Nodejs', 'Express', 'Vercel'],
     github:'https://github.com/vickova/OutFitLibrary.git',
-    livesite:'https://out-fit-library.vercel.app/',
+    livesite:'https://test.medixdeck.com/',
     type:'Personal'
 },
   {
