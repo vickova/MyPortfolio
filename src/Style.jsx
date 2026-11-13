@@ -548,8 +548,8 @@ color: rgb(35, 36, 41);
 }
   .single-project{
     padding:1rem;
-    background-color: ${({ mode }) => mode ?'#fbfbfb': '#884a55'};
-    box-shadow:1px 1px 2px 1px ${({ mode }) => mode ?'gray': '#38151b'};
+    background:var(--gradient);
+    box-shadow:0 0 70px -6px rgba(255,111,90,0.55);
     border-radius:10px;
     &:hover{
       background: linear-gradient(rgba(56, 21, 27, 0.2), transparent)

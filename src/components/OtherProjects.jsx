@@ -34,7 +34,7 @@ const OtherProjects = ({mode}) => {
                 </a>
               </div>
               <h3>{item.name}</h3>
-              <p>{item.description}</p>
+              <p style={{fontSize:'1rem'}}> {item.description} </p>
               <ul>
                 {
                   item.resouces.map((lst, i)=>{

@@ -1,4 +1,5 @@
 import React from 'react';
+import Vicky from '../images/vicky-rm-bg.png';
 
 const Hero = () => {
   return (
@@ -56,8 +57,8 @@ const Hero = () => {
           <span className="chip">React Query</span>
         </div>
 
-        <div className="orbit-core">
-          <img src="../images/vicky-rm-bg.png" alt="vicky" />
+          <div className="orbit-core">
+          <img src={Vicky} alt="vicky" style={{borderRadius:"50%"}}/>
         </div>
       </div>
     </section>
