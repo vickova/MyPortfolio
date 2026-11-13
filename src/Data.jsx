@@ -11,8 +11,29 @@ import FarmSwift from './images/FarmS.png';
 import Coalition from './images/Coalition.png';
 import Darads from './images/Darads.png';
 import OutfitLibrary from './images/Outfitlibrary.png';
+import MedixDeck from './images/MedixDeck.png';
 
 export const works = [
+  {
+    image:MedixDeck,
+    name:'MedixDeck',
+    description:'Designed and developed the MedixDeck healthcare platform from scratch, building responsive and user-friendly interfaces for a digital healthcare solution. Implemented key sections for patient access, doctor discovery, practitioner onboarding, and healthcare services.',
+resources: [
+  "React.js",
+  "JavaScript (ES6+)",
+  "HTML5",
+  "CSS3",
+  "Material UI",
+  "TanStack Router",
+  "TanStack Query",
+  "REST API Integration",
+  "Lucide React",
+  "Git & GitHub",
+  "Mixpanel"
+],    github:'#',
+    livesite:'https://test.medixdeck.com',
+    type:'Professional Project'
+},
   {
     image:OutfitLibrary,
     name:'OutfitLibrary',
