@@ -18,19 +18,15 @@ export const works = [
     image:MedixDeck,
     name:'MedixDeck',
     description:'Designed and developed the MedixDeck healthcare platform from scratch, building responsive and user-friendly interfaces for a digital healthcare solution. Implemented key sections for patient access, doctor discovery, practitioner onboarding, and healthcare services.',
-resources: [
+resouces: [
   "React.js",
-  "JavaScript (ES6+)",
-  "HTML5",
-  "CSS3",
-  "Material UI",
   "TanStack Router",
   "TanStack Query",
   "REST API Integration",
   "Lucide React",
   "Git & GitHub",
-  "Mixpanel"
-],    github:'#',
+],    
+github:'https://github.com/vickova',
     livesite:'https://test.medixdeck.com',
     type:'Professional Project'
 },
