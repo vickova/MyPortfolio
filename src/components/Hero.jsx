@@ -1,68 +1,39 @@
 import React from 'react';
 import Vicky from '../images/vicky-rm-bg.png';
+import { FiGithub, FiLinkedin, FiTwitter, FiDownload } from 'react-icons/fi';
+import { HeroStyle } from '../Style';
+import Cv from '../images/cv/Victoria Olumide.pdf';
+import { motion } from 'framer-motion';
+import { SectionAnimation, TextAnimation, PictureAnimation, titleAnim } from '../animation';
 
-const Hero = () => {
+const Hero = ({mode}) => {
   return (
-    <section className="wrap hero" id="home">
-      <div>
-        <div className="kicker">
-          <span className="dot"></span>
-          Frontend Developer, based in Lagos
+    <HeroStyle id='home' mode={mode}>
+      <div className='images'>
+            <a href="https://github.com/vickova" target='_blank' rel='noreferrer'>
+              <FiGithub className='hero-icons'/>
+            </a>
+            <a href="https://www.linkedin.com/in/victoria-olumide-90439b163/" target='_blank' rel='noreferrer'>
+              <FiLinkedin className='hero-icons'/>
+            </a>
+            <a href="https://twitter.com/OlumideVictori3" target='_blank' rel='noreferrer'>
+              <FiTwitter className='hero-icons'/>
+            </a>
+
         </div>
-
-        <h1>
-          <span className="line">
-            I build interfaces
-          </span>
-
-          <span className="line">
-            people actually{' '}
-            <span className="grad">
-              enjoy using.
-            </span>
-          </span>
-        </h1>
-
-        <p className="sub">
-          React, Next.js and TypeScript are my daily tools —
-          for dashboards, storefronts and the messy internal
-          tools that have to survive real users and real data,
-          not just a demo.
-        </p>
-
-        <div className="cta-row">
-          <a href="#work" className="btn-primary">
-            See my work
-          </a>
-
-          <a
-            href="mailto:olumideronke@gmail.com"
-            className="btn-ghost"
-          >
-            Email me
-          </a>
-        </div>
-      </div>
-
-      <div className="orbit-wrap">
-        <div className="ring ring-3">
-          <span className="chip">Next.js</span>
-        </div>
-
-        <div className="ring ring-2">
-          <span className="chip">TypeScript</span>
-        </div>
-
-        <div className="ring ring-1">
-          <span className="chip">React Query</span>
-        </div>
-
-          <div className="orbit-core">
-          <img src={Vicky} alt="vicky" style={{borderRadius:"50%"}}/>
-        </div>
-      </div>
-    </section>
-  );
-};
+        <motion.div className='heros' variants={SectionAnimation} initial='hidden' animate='show'>
+          <motion.div className='herotext' variants={TextAnimation}>
+              <motion.h2 variants={titleAnim}>Hello, I'm Victoria Olumide</motion.h2>
+              <motion.h3 variants={titleAnim}>A Daring Frontend Developer and Data Analyst</motion.h3>
+              <motion.p variants={titleAnim}>I optimize user experience by implementing visual elements that users see and interact with within a web application</motion.p>
+              <motion.button variants={titleAnim}><a href={Cv} target='_blank' rel='noreferrer'><span>Download CV</span><FiDownload/></a></motion.button>
+          </motion.div>
+          <motion.div className='profile' variants={PictureAnimation}>
+            <img src={Vicky} alt="Victoria Olumide"/>
+          </motion.div>
+        </motion.div>
+    </HeroStyle>
+  )
+}
 
 export default Hero;

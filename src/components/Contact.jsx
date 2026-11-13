@@ -1,42 +1,45 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import { ContactStyle } from '../Style';
+import { ProjAnimation } from '../animation';
+import { useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
-const Contact = () => {
+const Contact = ({mode}) => {
+  const controls = useAnimation();
+  const {ref, inView} = useInView();
+  console.log(inView)
+  useEffect(()=>{
+    if(inView){
+      controls.start('show')
+    }
+    else{
+      controls.start('hidden')
+    }
+  }, [controls, inView])
   return (
-    <section className="wrap contact">
-      <div className="contact-panel">
-        <div className="contact-inner">
-          <h2>
-            Let's build something
-            worth using.
-          </h2>
-
-          <p>
-            Open to frontend roles and freelance work —
-            dashboards, storefronts, or anything that needs
-            a developer who cares about the details.
-          </p>
-
-          <div className="contact-cta">
-            <a
-              href="mailto:olumideronke@gmail.com"
-              className="btn-dark"
-            >
-              olumideronke@gmail.com
-            </a>
-
-            <a
-              href="https://www.linkedin.com/in/victoria-olumide-90439b163"
-              target="_blank"
-              rel="noreferrer"
-              className="btn-outline-dark"
-            >
-              LinkedIn
-            </a>
+    <ContactStyle id='contact' mode={mode} ref={ref} variants={ProjAnimation} initial='hidden' animate={controls}>
+      <h2>Contact</h2>
+      <h4>Get in touch</h4>
+      <div className='form'>
+        <form action="" onSubmit={(e)=>e.preventDefault()}>
+          <div className='form-section'>
+            <div className='sect'>
+              <input type="text" name='name' placeholder='Name'/>
+              <textarea name="" id="" cols="30" rows="10" placeholder='Project'></textarea>
+            </div>
+            <div className='sect'>
+              <input type="email" name='email'placeholder='Email Address'/>
+              <textarea name="" id="" cols="30" rows="10" placeholder='Message'></textarea>
+            </div>
           </div>
-        </div>
+          <div className='button'>
+          <button>Submit</button>
+          </div>
+        </form>
       </div>
-    </section>
-  );
-};
+    </ContactStyle>
+  )
+}
 
-export default Contact;
+
+export default Contact
